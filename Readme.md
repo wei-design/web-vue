@@ -1,5 +1,7 @@
 Wei-Design
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 ## 初始化
 
 Vue 3 + TypeScript + Vite

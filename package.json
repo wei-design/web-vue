@@ -3,9 +3,11 @@
     "private": true,
     "version": "0.0.0",
     "scripts": {
+        "start": "npm run dev",
         "dev": "vite",
         "build": "vue-tsc --noEmit && vite build",
         "preview": "vite preview",
+        "commit": "git cz",
         "release": "standard-version",
         "release:alpha": "standard-version --prerelease alpha",
         "release:rc": "standard-version --prerelease rc",
@@ -17,8 +19,11 @@
         "vue": "^3.2.25"
     },
     "devDependencies": {
+        "@commitlint/cli": "^17.0.0",
+        "@commitlint/config-conventional": "^17.0.0",
         "@vitejs/plugin-vue": "^2.3.3",
         "commitizen": "^4.2.4",
+        "husky": "^8.0.1",
         "standard-version": "^9.5.0",
         "typescript": "^4.5.4",
         "vite": "^2.9.9",
@@ -27,6 +32,11 @@
     "config": {
         "commitizen": {
             "path": "cz-conventional-changelog"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
     }
 }
