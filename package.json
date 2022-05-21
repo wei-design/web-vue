@@ -1,7 +1,8 @@
 {
     "name": "wei-design",
     "private": true,
-    "version": "0.0.0",
+    "version": "1.0.0",
+    "main": "dist/wei-design.js",
     "scripts": {
         "start": "npm run dev",
         "dev": "vite",
@@ -24,9 +25,11 @@
         "@commitlint/cli": "^17.0.0",
         "@commitlint/config-conventional": "^17.0.0",
         "@vitejs/plugin-vue": "^2.3.3",
+        "@vitejs/plugin-vue-jsx": "^1.3.10",
         "commitizen": "^4.2.4",
         "husky": "^8.0.1",
         "rimraf": "^3.0.2",
+        "sass": "1.49.7",
         "standard-version": "^9.5.0",
         "typescript": "^4.5.4",
         "vite": "^2.9.9",

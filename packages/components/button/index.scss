@@ -1,0 +1,252 @@
+@import "../../theme/color.variables";
+button {
+    outline: none;
+}
+
+$xs: 2px 8px;
+$sm: 5px 10px;
+$md: 8px 12px;
+$lg: 10px 16px;
+$xsloading: 1px 4px;
+$smloading: 2px 5px;
+$mdloading: 3px 6px;
+$lgloading: 4px 8px;
+.wei-button {
+    overflow: hidden;
+    border-radius: 6px;
+    border: 0;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    display: inline-block;
+    position: relative;
+    outline: none;
+    font-weight: 400;
+    -webkit-appearance: none;
+    user-select: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.1s linear;
+    box-sizing: border-box;
+    cursor: pointer;
+    .wei-button-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: center;
+        .wei-button-icon {
+            display: inline-block;
+            margin-right: 8px;
+            line-height: 1;
+        }
+        .wei-button-loading-only {
+            display: block;
+            margin: 0;
+            height: 32px;
+            width: 32px;
+        }
+        .wei-button-icon-only {
+            display: block;
+            font-size: 12px;
+            margin: 0;
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+
+.wei-button-hasicon {
+    padding: 10px !important;
+}
+
+@mixin wei-button-colors($color, $type) {
+    background: $color;
+    color: $color;
+    @if $type== "default" {
+        background: transparent;
+        border: 1px solid $color;
+        &:focus,
+        &:hover {
+            background: mix($white, $color, 90%);
+            border: 1px solid mix($white, $color, 20%);
+            color: $color;
+        }
+    }
+    @if $type== "primary" {
+        border: none;
+        color: $white;
+        &:focus,
+        &:hover {
+            background: mix($white, $color, 30%);
+        }
+        &:active {
+            background: mix($black, $color, 5%);
+        }
+        &:disabled {
+            background: mix($white, $color, 40%);
+        }
+    }
+    @if $type== "link" {
+        background: none;
+        border: none;
+    }
+    @if $type== "ghost" {
+        background: #ffffff;
+        border: 1px solid $color;
+    }
+    @if $type== "delicate" {
+        background: none;
+        border: none;
+    }
+}
+
+.wei-button-type-default {
+    @include wei-button-colors($primaryColor, "default");
+}
+
+.wei-button-type-primary {
+    @include wei-button-colors($primaryColor, "primary");
+    border: none;
+    color: $white !important;
+}
+
+.wei-button-type-link {
+    @include wei-button-colors($primaryColor, "link");
+}
+
+.wei-button-type-ghost {
+    @include wei-button-colors($primaryColor, "ghost");
+}
+
+.wei-button-type-delicate {
+    @include wei-button-colors($delicateColor, "delicate");
+}
+
+.wei-button-type-default.wei-button-status-success {
+    @include wei-button-colors($successColor, "default");
+}
+
+.wei-button-type-default.wei-button-status-info {
+    @include wei-button-colors($infoColor, "default");
+}
+
+.wei-button-type-default.wei-button-status-warning {
+    @include wei-button-colors($warningColor, "default");
+}
+
+.wei-button-type-default.wei-button-status-danger {
+    @include wei-button-colors($dangerColor, "default");
+}
+
+.wei-button-type-primary.wei-button-status-success {
+    @include wei-button-colors($successColor, "primary");
+}
+
+.wei-button-type-primary.wei-button-status-info {
+    @include wei-button-colors($infoColor, "primary");
+}
+
+.wei-button-type-primary.wei-button-status-warning {
+    @include wei-button-colors($warningColor, "primary");
+}
+
+.wei-button-type-primary.wei-button-status-danger {
+    @include wei-button-colors($dangerColor, "primary");
+}
+
+.wei-button-type-link.wei-button-status-success {
+    @include wei-button-colors($successColor, "link");
+}
+
+.wei-button-type-link.wei-button-status-info {
+    @include wei-button-colors($infoColor, "link");
+}
+
+.wei-button-type-link.wei-button-status-warning {
+    @include wei-button-colors($warningColor, "link");
+}
+
+.wei-button-type-link.wei-button-status-danger {
+    @include wei-button-colors($dangerColor, "link");
+}
+
+.wei-button-type-ghost.wei-button-status-success {
+    @include wei-button-colors($successColor, "ghost");
+}
+
+.wei-button-type-ghost.wei-button-status-info {
+    @include wei-button-colors($infoColor, "ghost");
+}
+
+.wei-button-type-ghost.wei-button-status-warning {
+    @include wei-button-colors($warningColor, "ghost");
+}
+
+.wei-button-type-ghost.wei-button-status-danger {
+    @include wei-button-colors($dangerColor, "ghost");
+}
+
+.wei-button-disabled {
+    background-color: #f7f7fa;
+    cursor: not-allowed;
+    &:focus,
+    &:hover {
+        background-color: #f7f7fa;
+        outline: none;
+    }
+}
+
+.wei-button-shape-square {
+    border-radius: 6px;
+}
+
+.wei-button-shape-circle {
+    border-radius: 50%;
+    padding: 0;
+}
+
+.wei-button-shape-round {
+    border-radius: 18px;
+}
+
+.wei-button-size-lg {
+    padding: $lg;
+    font-size: 16px;
+}
+.wei-button-size-lg.wei-button-loading {
+    padding: $lgloading;
+    font-size: 16px;
+}
+
+.wei-button-size-md {
+    padding: $md;
+    font-size: 14px;
+}
+.wei-button-size-md.wei-button-loading {
+    padding: $mdloading;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.wei-button-size-sm {
+    padding: $sm;
+    font-size: 14px;
+}
+.wei-button-size-sm.wei-button-loading {
+    padding: $smloading;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.wei-button-size-xs {
+    padding: $xs;
+    font-size: 12px;
+}
+.wei-button-size-xs.wei-button-loading {
+    padding: $xsloading;
+    pointer-events: none;
+    font-size: 14px;
+}
+
+.wei-button-slot {
+    text-align: center;
+}
