@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# UI
+Element UI Kit_v2.0.sketch
