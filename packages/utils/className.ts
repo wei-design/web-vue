@@ -1,5 +1,5 @@
 import { isArray, isString, isObject } from './util';
-function classNames (...args: any[]) {
+function className(...args: any[]) {
     const classes = [];
     for (let i = 0; i < args.length; i++) {
         const value = args[i];
@@ -8,7 +8,7 @@ function classNames (...args: any[]) {
             classes.push(value);
         } else if (isArray(value)) {
             for (let i = 0; i < value.length; i++) {
-                const inner = classNames(value[i]);
+                const inner: any = className(value[i]);
                 if (inner) {
                     classes.push(inner);
                 }
@@ -24,4 +24,4 @@ function classNames (...args: any[]) {
     return classes.join(' ');
 }
 
-export default classNames;
+export default className;
