@@ -1,12 +1,28 @@
 {
     "name": "wei-design",
-    "private": true,
+    "private": false,
     "version": "1.0.0",
-    "main": "dist/wei-design.js",
+    "files": [
+        "lib/*"
+    ],
+    "main": "lib/wei-design.js",
+    "keywords": [
+        "wei-design",
+        "vue",
+        "vue3",
+        "Vue.js 3 UI library",
+        "Wei Design - A Vue.js 3 UI library",
+        "javascript",
+        "npm"
+    ],
+    "author": "wforguo@qq.com",
+    "license": "ISC",
     "scripts": {
         "start": "npm run dev",
-        "dev": "vite",
         "build": "vue-tsc --noEmit && vite build",
+        "dev": "vite --config ./build/base.config.ts",
+        "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts",
+        "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && node script/copyDir.js",
         "preview": "vite preview",
         "cz": "git-cz",
         "clean:dist": "rimraf dist",
@@ -38,10 +54,16 @@
         "husky": "^8.0.1",
         "prettier": "^2.6.2",
         "rimraf": "^3.0.2",
+        "rollup-plugin-esbuild": "^4.9.1",
+        "rollup-plugin-scss": "^3.0.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "rollup-plugin-vue": "^6.0.0",
         "sass": "1.49.7",
         "standard-version": "^9.5.0",
         "typescript": "^4.7.2",
         "vite": "^2.9.9",
+        "vite-plugin-dts": "^1.2.0",
+        "vite-plugin-md": "^0.15.0",
         "vue-tsc": "^0.34.7"
     },
     "config": {

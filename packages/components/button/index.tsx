@@ -46,9 +46,14 @@ const WeiButton = defineComponent({
             props.disabled ? 'wei-button-disabled' : '',
         ]);
         return () => (
-            <button class={classString} disabled={props.disabled || props.loading}>
+            <button
+                class={classString}
+                disabled={props.disabled || props.loading}
+            >
                 <div class="wei-button-inner">
-                    <span class="wei-button-slot">{slots.default && slots.default()}</span>
+                    <span class="wei-button-slot">
+                        {slots.default && slots.default()}
+                    </span>
                 </div>
             </button>
         );

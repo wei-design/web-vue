@@ -2,9 +2,9 @@
     "name": "@wei-design/docs",
     "private": true,
     "scripts": {
-        "docs:dev": "vitepress dev .",
-        "docs:build": "vitepress build .",
-        "docs:serve": "vitepress serve ."
+        "dev": "vitepress dev . --host --port 4000",
+        "build": "vitepress build .",
+        "serve": "vitepress serve ."
     },
     "devDependencies": {
         "vitepress": "^0.22.4"

@@ -1,5 +1,5 @@
 
-<p align="center">Wei Design - A Vue.js 3 UI library</p>
+<p align="center">Wei-Design - A Vue.js 3 UI library</p>
 
 <p align="center">
   <a href="http://commitizen.github.io/cz-cli">
@@ -8,18 +8,13 @@
   <br>
 </p>
 
-- 🔭 Vite
-- 💪 Vue3
+- 🔭 [Vite](https://vitejs.dev)
+- 💪 [Vue3](https://vuejs.org)
 - 🔥 TypeScript
-
-## 初始化
-
-Vue 3 + TypeScript + Vite
 
 UI原型：[element](https://element.eleme.cn/2.0/#/zh-CN/resource)
 
-[Vue](https://vuejs.org)
-[Vite](https://vitejs.dev)
+## 初始化
 
 [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite)
 
@@ -49,9 +44,9 @@ yarn create vite my-vue-app --template vue-tsc
 
 ## 基础配置
 
-### 必备
+### 环境
 
-需要配置`scss`预编译和`jsx`语法
+`scss`预编译和`jsx`语法
 
 - 安装
 
@@ -74,15 +69,12 @@ export default defineConfig({
 })
 ```
 
-### 加持
+### 规范
 
 - commit规范
 - eslint
 
 建议提前配置好，开发体验会更好
-
-
-
 
 ## 文档搭建
 
