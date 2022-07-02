@@ -1,7 +1,10 @@
+# Wei-Design
 
-<p align="center">Wei-Design - A Vue.js 3 UI library</p>
+A Vue.js 3 UI library
 
-<p align="center">
+---
+
+<p>
   <a href="http://commitizen.github.io/cz-cli">
     <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
   </a>
@@ -39,7 +42,7 @@ yarn create vite
 ### 指定模板初始化
 
 ```
-yarn create vite my-vue-app --template vue-tsc
+yarn create vite vite-app-vue --template vue-tsc
 ```
 
 ## 基础配置
@@ -100,7 +103,7 @@ yarn init
 yarn add --dev vitepress
 ```
 
-- 4、创建你第一篇文档
+- 4、创建第一篇文档
 
 ```shell
 echo '# Hello Vue3' > index.md
@@ -145,9 +148,131 @@ yarn docs:dev
 
 ### 配置
 
-- 1、新增配置文件
+#### 1、新增配置文件
 
 ```shell
 mkdir .vuepress
 touch config.js  
 ```
+
+#### 2、添加sidebar和nav
+
+- sidebar：左侧菜单
+
+```javascript
+const sidebar = {
+    '/zh-CN/guide/': [
+        {
+            text: '基础',
+            children: [
+                { text: '设计', link: '/zh-CN/guide/design' },
+                { text: '导航', link: '/zh-CN/guide/nav',},
+                { text: '安装', link: '/zh-CN/guide/installation' },
+                { text: '快速开始', link: '/zh-CN/guide/quickstart' },
+            ],
+        },
+        {
+            text: '进阶',
+            children: [
+                {
+                    text: '国际化',
+                    link: '/zh-CN/guide/i18n',
+                },
+                {
+                    text: '主题',
+                    link: '/zh-CN/guide/theming',
+                },
+                {
+                    text: '暗黑模式',
+                    link: '/zh-CN/guide/dark-mode',
+                    promotion: '2.2.0',
+                },
+                {
+                    text: '更新日志',
+                    link: '/zh-CN/guide/changelog',
+                },
+            ],
+        },
+    ],
+    '/zh-CN/component/': [
+        {
+            text: '基础组件',
+            children: [{ link: '/zh-CN/component/button', text: 'Button' }],
+        },
+    ],
+};
+```
+
+- nav：顶部导航
+
+```javascript
+const nav = [
+    {
+        "text": "指南",
+        "link": "/zh-CN/guide/design",
+        "activeMatch": "/guide/"
+    },
+    {
+        "text": "组件",
+        "link": "/zh-CN/component/button",
+        "activeMatch": "/component/"
+    },
+    {
+        "text": "资源",
+        "link": "/zh-CN/resource/index",
+        "activeMatch": "/resource/"
+    }
+]
+```
+
+基本效果
+
+![docs.png](static/docs.png)
+
+这里预留了多语言的口子，目录结构如下：
+
+![img.png](static/docs-menu.png)
+
+
+### 增加源码预览
+
+### 自定义主题
+
+## 打包
+
+> 支持指定文件目录 -C
+
+### 组件库
+
+配置
+
+```shell
+build/lib.config.js
+```
+
+执行：
+
+```shell
+npm run lib:build
+```
+
+### 文档库
+
+配置
+
+```shell
+build/doc.config.js
+```
+
+执行：
+
+```shell
+npm run -C docs build
+```
+
+## 问题及解决
+
+TypeError: Invalid value used as weak map key
+
+md中有无法解析的标签导致
+

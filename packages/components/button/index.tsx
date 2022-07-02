@@ -33,7 +33,7 @@ const ButtonProps = {
     },
 };
 
-const WeiButton = defineComponent({
+const Button = defineComponent({
     name: 'WeiButton',
     props: ButtonProps,
     setup(props, { slots }: SetupContext) {
@@ -60,9 +60,9 @@ const WeiButton = defineComponent({
     },
 });
 
-WeiButton.install = function (app: App) {
-    app.component(WeiButton.name, WeiButton);
+Button.install = function (app: App) {
+    app.component(Button.name, Button);
     return app;
 };
 
-export default WeiButton;
+export default Button;

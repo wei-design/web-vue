@@ -1,11 +1,12 @@
 <template>
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <h2>wei-design</h2>
     <div>
         <WeiButton :loading="true">按钮组件</WeiButton>
     </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+</script>
 
 <style>
 #app {

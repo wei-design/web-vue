@@ -1,0 +1,13 @@
+{
+  "zh-CN": {
+    "basic": {
+      "text": "基础组件",
+      "children": [
+        {
+          "link": "/button",
+          "text": "Button"
+        }
+      ]
+    }
+  }
+}

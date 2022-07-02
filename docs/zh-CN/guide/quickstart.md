@@ -1,6 +1,6 @@
 ---
 title: Quick Start
-lang: en-US
+lang: zh-CN
 ---
 
 # Quick Start
@@ -26,77 +26,9 @@ app.use(ElementPlus)
 app.mount('#app')
 ```
 
-#### Volar support
-
-If you use volar, please add the global component type definition to `compilerOptions.types` in `tsconfig.json`.
-
-```json
-// tsconfig.json
-{
-  "compilerOptions": {
-    // ...
-    "types": ["element-plus/global"]
-  }
-}
-```
-
 ### On-demand Import
 
 You need to use an additional plugin to import components you used.
-
-#### Auto import <el-tag type="primary" style="vertical-align: middle;" effect="dark" size="small">Recommend</el-tag>
-
-First you need to install `unplugin-vue-components` and `unplugin-auto-import`.
-
-```shell
-npm install -D unplugin-vue-components unplugin-auto-import
-```
-
-Then add the code below into your `Vite` or `Webpack` config file.
-
-##### Vite
-
-```ts
-// vite.config.ts
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-
-export default {
-  plugins: [
-    // ...
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
-  ],
-}
-```
-
-##### Webpack
-
-```js
-// webpack.config.js
-const AutoImport = require('unplugin-auto-import/webpack')
-const Components = require('unplugin-vue-components/webpack')
-const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
-
-module.exports = {
-  // ...
-  plugins: [
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
-  ],
-}
-```
-
-For more bundlers ([Rollup](https://rollupjs.org/), [Vue CLI](https://cli.vuejs.org/)) and configs please reference [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components#installation) and [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import#install).
 
 ### Manually import
 

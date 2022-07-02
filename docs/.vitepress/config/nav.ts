@@ -1,21 +1,12 @@
-import { ensureLang } from '../utils/lang'
-import navLocale from '../i18n/pages/sidebar.json'
+import {ensureLang, lang} from '../utils/lang'
+import navLocale from '../i18n/pages/nav.json'
 
 function getNav() {
-    return Object.fromEntries(
-        Object.entries(navLocale).map(([lang, locales]) => {
-            const item: {
-                link: string
-                text: string
-                activeMatch?: string
-            }[] = Object.values(locales).map((item) => ({
-                ...item,
-                link: `${ensureLang(lang)}${item.link}`,
-            }))
-
-            return [lang, item]
-        })
-    )
+    return Object.values(navLocale[lang]).map(item => ({
+        ...item,
+        // 添加语言前缀，最终为 /zh-CN/guide/design
+        link: `${ensureLang(lang)}${item.link}`,
+    }))
 }
 
 export const nav = getNav()
