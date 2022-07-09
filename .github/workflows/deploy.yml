@@ -20,7 +20,7 @@ jobs:
               run: yarn docs:build
 
             - name: Dir
-              run: docs/.vitepress/dist && ls -ll
+              run: cd docs/.vitepress/dist && ls -ll
 
             - name: Deploy
               uses: peaceiris/actions-gh-pages@v3
