@@ -1,27 +1,47 @@
 {
     "name": "@wei-design/docs",
-    "private": true,
+    "private": false,
+    "version": "1.0.0",
+    "files": [
+        "lib/*"
+    ],
+    "main": "lib/wei-design.es.js",
+    "keywords": [
+        "wei-design",
+        "vue",
+        "vue3",
+        "Vue.js 3 UI library",
+        "Wei Design - A Vue.js 3 UI library",
+        "javascript",
+        "npm"
+    ],
+    "author": "wforguo@qq.com",
     "scripts": {
         "dev": "vitepress dev . --host --port 5001",
         "build": "cross-env NODE_ENV=production && vitepress build .",
         "serve": "cross-env NODE_ENV=production vitepress serve . --port 5001"
     },
-    "devDependencies": {
+    "dependencies": {
         "@vue/shared": "^3.2.33",
         "@vueuse/core": "^8.5.0",
         "axios": "^0.27.2",
         "clipboard-copy": "^4.0.1",
+        "dayjs": "^1.11.3",
         "markdown-it": "^13.0.1",
         "normalize.css": "^8.0.1",
         "nprogress": "^0.2.0",
         "prism-theme-vars": "^0.2.2",
         "vue": "3.2.33"
     },
-    "dependencies": {
-        "chalk": "^4.1.2",
-        "cross-env": "^7.0.3",
+    "devDependencies": {
         "@vitejs/plugin-vue-jsx": "^1.3.10",
+        "chalk": "^4.1.2",
+        "consola": "^2.15.3",
+        "cross-env": "^7.0.3",
+        "escape-html": "^1.0.3",
+        "fast-glob": "^3.2.11",
         "markdown-it-container": "^3.0.0",
+        "prismjs": "^1.28.0",
         "unocss": "^0.33.5",
         "unplugin-icons": "^0.14.3",
         "unplugin-vue-components": "^0.19.5",
@@ -29,6 +49,7 @@
         "vite": "^2.9.9",
         "vite-plugin-inspect": "^0.5.0",
         "vite-plugin-mkcert": "^1.6.0",
-        "vite-plugin-pwa": "^0.12.0"
+        "vite-plugin-pwa": "^0.12.0",
+        "vitepress": "^0.22.4"
     }
 }

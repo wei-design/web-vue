@@ -1,8 +1,7 @@
 {
-  "zh-CN": {
-    "source": "Source",
-    "contributors": "Contributors",
-    "component": "Component",
-    "docs": "Docs"
-  }
+    "zh-CN": {
+        "source": "源码",
+        "component": "组件",
+        "docs": "文档"
+    }
 }

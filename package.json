@@ -5,7 +5,7 @@
     "files": [
         "lib/*"
     ],
-    "main": "lib/wei-design.js",
+    "main": "lib/wei-design.es.js",
     "keywords": [
         "wei-design",
         "vue",
@@ -24,9 +24,8 @@
         "lib:build": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts",
         "docs:dev": "pnpm run -C docs dev",
         "docs:build": "pnpm run -C docs build",
-        "docs:serve": "pnpm run -C docs serve",
         "preview": "vite preview",
-        "clean:dist": "rimraf dist",
+        "clean:lib": "rimraf lib",
         "clean:modules": "rimraf node_modules",
         "prepare": "husky install",
         "release": "standard-version",

@@ -15,7 +15,34 @@ A Vue.js 3 UI library
 - 💪 [Vue3](https://vuejs.org)
 - 🔥 TypeScript
 
-UI原型：[element](https://element.eleme.cn/2.0/#/zh-CN/resource)
+参考[element](https://element-plus.org/)
+
+## 目录结构
+
+```
+├── config                              # 配置文件
+├── cloud                               # 云函数存放
+├── dist                                # 打包文件
+├── node_modules                        # 依赖的模块包
+├── package.json                        # 项目基本信息
+├── src                                 # 项目的核心组件
+│   ├── service                         # 资源文件（css、image、config）
+│   ├── common                          # 资源文件（css、image、config）
+│   ├── components                      # 公共组件
+│   ├── store                           # 状态管理（redux）
+|   ├── pages                           # 页面文件目录
+|   |   ├── Index                       # index页面目录
+|   |   |   ├── index.jsx               # index页面逻辑
+|   |   |   └── index.scss              # index页面样式
+|   |   |   └── index.config.js         # index页面配置（小程序page.json内容）
+│   ├── util                            # 公共方法(util.js、globalData.js)
+│   ├── app.jsx                         # 入口文件
+│   ├── app.scss                        # 公共样式
+│   ├── index.html                      # 主页模板
+├── static                              # 静态资源(CDN)
+├── README.md                           # 项目描述信息
+
+```
 
 ## 初始化
 
@@ -81,162 +108,7 @@ export default defineConfig({
 
 ## 文档搭建
 
-[vitepress](https://vitejs.cn/vitepress/)
-
-### 快速搭建
-
-- 1、根目录创建docs文件夹
-
-```shell
-mkdir docs && cd docs
-```
-
-- 2、初始化
-
-```shell
-yarn init
-```
-
-- 3、安装 `VitePress`
-
-```shell
-yarn add --dev vitepress
-```
-
-- 4、创建第一篇文档
-
-```shell
-echo '# Hello Vue3' > index.md
-```
-
-- 5、在`package.json`中添加脚本
-
-直接使用.
-
-```json
-{
-  "scripts": {
-    "docs:dev": "vitepress dev .",
-    "docs:build": "vitepress build .",
-    "docs:serve": "vitepress serve ."
-  }
-}
-```
-
-完整版`package.json`如下：
-
-```json
-{
-    "name": "@wei-design/docs",
-    "private": true,
-    "scripts": {
-        "docs:dev": "vitepress dev .",
-        "docs:build": "vitepress build .",
-        "docs:serve": "vitepress serve ."
-    },
-    "devDependencies": {
-        "vitepress": "^0.22.4"
-    }
-}
-```
-
-- 6、启动文档站点
-
-```shell
-yarn docs:dev
-```
-
-### 配置
-
-#### 1、新增配置文件
-
-```shell
-mkdir .vuepress
-touch config.js  
-```
-
-#### 2、添加sidebar和nav
-
-- sidebar：左侧菜单
-
-```javascript
-const sidebar = {
-    '/zh-CN/guide/': [
-        {
-            text: '基础',
-            children: [
-                { text: '设计', link: '/zh-CN/guide/design' },
-                { text: '导航', link: '/zh-CN/guide/nav',},
-                { text: '安装', link: '/zh-CN/guide/installation' },
-                { text: '快速开始', link: '/zh-CN/guide/quickstart' },
-            ],
-        },
-        {
-            text: '进阶',
-            children: [
-                {
-                    text: '国际化',
-                    link: '/zh-CN/guide/i18n',
-                },
-                {
-                    text: '主题',
-                    link: '/zh-CN/guide/theming',
-                },
-                {
-                    text: '暗黑模式',
-                    link: '/zh-CN/guide/dark-mode',
-                    promotion: '2.2.0',
-                },
-                {
-                    text: '更新日志',
-                    link: '/zh-CN/guide/changelog',
-                },
-            ],
-        },
-    ],
-    '/zh-CN/component/': [
-        {
-            text: '基础组件',
-            children: [{ link: '/zh-CN/component/button', text: 'Button' }],
-        },
-    ],
-};
-```
-
-- nav：顶部导航
-
-```javascript
-const nav = [
-    {
-        "text": "指南",
-        "link": "/zh-CN/guide/design",
-        "activeMatch": "/guide/"
-    },
-    {
-        "text": "组件",
-        "link": "/zh-CN/component/button",
-        "activeMatch": "/component/"
-    },
-    {
-        "text": "资源",
-        "link": "/zh-CN/resource/index",
-        "activeMatch": "/resource/"
-    }
-]
-```
-
-基本效果
-
-![docs.png](static/docs.png)
-
-这里预留了多语言的口子，目录结构如下：
-
-![img.png](static/docs-menu.png)
-
-
-### 增加源码预览
-
-### 自定义主题
+[docs](./docs/Readme.md)
 
 ## 打包
 
@@ -245,6 +117,8 @@ const nav = [
 ### 组件库
 
 配置
+
+[vite库模式配置](https://cn.vitejs.dev/guide/build.html#library-mode)
 
 ```shell
 build/lib.config.js
@@ -274,5 +148,4 @@ npm run -C docs build
 
 TypeError: Invalid value used as weak map key
 
-md中有无法解析的标签导致
-
+**md中有无法解析的标签导致**

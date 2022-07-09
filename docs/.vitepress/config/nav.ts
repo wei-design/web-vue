@@ -1,3 +1,8 @@
+/**
+ * @Author: forguo
+ * @Date: 2022/7/8 23:17
+ * @Description: nav配置
+ */
 import {ensureLang, lang} from '../utils/lang'
 import navLocale from '../i18n/pages/nav.json'
 

@@ -1,47 +1,30 @@
 {
-  "zh-CN": {
-    "intro": {
-      "text": "基础",
-      "children": [
-        {
-          "text": "设计",
-          "link": "/guide/design"
+    "zh-CN": {
+        "intro": {
+            "text": "基础",
+            "children": [
+                {
+                    "text": "安装",
+                    "link": "/guide/installation"
+                },
+                {
+                    "text": "快速开始",
+                    "link": "/guide/quickstart"
+                }
+            ]
         },
-        {
-          "text": "导航",
-          "link": "/guide/nav"
-        },
-        {
-          "text": "安装",
-          "link": "/guide/installation"
-        },
-        {
-          "text": "快速开始",
-          "link": "/guide/quickstart"
+        "advanced": {
+            "text": "进阶",
+            "children": [
+                {
+                    "text": "主题",
+                    "link": "/guide/theming"
+                },
+                {
+                    "text": "更新日志",
+                    "link": "/guide/changelog"
+                }
+            ]
         }
-      ]
-    },
-    "advanced": {
-      "text": "进阶",
-      "children": [
-        {
-          "text": "国际化",
-          "link": "/guide/i18n"
-        },
-        {
-          "text": "主题",
-          "link": "/guide/theming"
-        },
-        {
-          "text": "暗黑模式",
-          "link": "/guide/dark-mode",
-          "promotion": "2.2.0"
-        },
-        {
-          "text": "更新日志",
-          "link": "/guide/changelog"
-        }
-      ]
     }
-  }
 }

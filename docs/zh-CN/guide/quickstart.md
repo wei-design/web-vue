@@ -3,13 +3,13 @@ title: Quick Start
 lang: zh-CN
 ---
 
-# Quick Start
+# 快速开始
 
 This section describes how to use Element Plus in your project.
 
-## Usage
+## 用法
 
-### Full Import
+### 完整引入
 
 If you don’t care about the bundle size so much, it’s more convenient to use full import.
 

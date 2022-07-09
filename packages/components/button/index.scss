@@ -1,4 +1,5 @@
 @import "../../theme/color.variables";
+
 button {
     outline: none;
 }
@@ -28,22 +29,26 @@ $lgloading: 4px 8px;
     transition: all 0.1s linear;
     box-sizing: border-box;
     cursor: pointer;
+
     .wei-button-inner {
         display: flex;
         justify-content: center;
         align-items: center;
         justify-content: center;
+
         .wei-button-icon {
             display: inline-block;
             margin-right: 8px;
             line-height: 1;
         }
+
         .wei-button-loading-only {
             display: block;
             margin: 0;
             height: 32px;
             width: 32px;
         }
+
         .wei-button-icon-only {
             display: block;
             font-size: 12px;
@@ -188,6 +193,7 @@ $lgloading: 4px 8px;
 .wei-button-disabled {
     background-color: #f7f7fa;
     cursor: not-allowed;
+
     &:focus,
     &:hover {
         background-color: #f7f7fa;
@@ -212,6 +218,7 @@ $lgloading: 4px 8px;
     padding: $lg;
     font-size: 16px;
 }
+
 .wei-button-size-lg.wei-button-loading {
     padding: $lgloading;
     font-size: 16px;
@@ -221,6 +228,7 @@ $lgloading: 4px 8px;
     padding: $md;
     font-size: 14px;
 }
+
 .wei-button-size-md.wei-button-loading {
     padding: $mdloading;
     pointer-events: none;
@@ -231,6 +239,7 @@ $lgloading: 4px 8px;
     padding: $sm;
     font-size: 14px;
 }
+
 .wei-button-size-sm.wei-button-loading {
     padding: $smloading;
     pointer-events: none;
@@ -241,6 +250,7 @@ $lgloading: 4px 8px;
     padding: $xs;
     font-size: 12px;
 }
+
 .wei-button-size-xs.wei-button-loading {
     padding: $xsloading;
     pointer-events: none;

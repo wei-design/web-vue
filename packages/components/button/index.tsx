@@ -1,4 +1,4 @@
-import { defineComponent, App, PropType, SetupContext } from 'vue';
+import {defineComponent, App, PropType, SetupContext} from 'vue';
 import classNames from '../../utils/className';
 import './index.scss';
 
@@ -7,21 +7,9 @@ const ButtonProps = {
         type: String as PropType<string>,
         default: 'default',
     },
-    status: {
-        type: String as PropType<string>,
-        default: 'default',
-    },
     size: {
         type: String as PropType<string>,
         default: 'md',
-    },
-    shape: {
-        type: String as PropType<string>,
-        default: 'square',
-    },
-    icon: {
-        type: String as PropType<string>,
-        default: '',
     },
     disabled: {
         type: Boolean as PropType<boolean>,
@@ -36,12 +24,10 @@ const ButtonProps = {
 const Button = defineComponent({
     name: 'WeiButton',
     props: ButtonProps,
-    setup(props, { slots }: SetupContext) {
+    setup(props, {slots}: SetupContext) {
         const classString = classNames([
             'wei-button',
             `wei-button-type-${props.type}`,
-            `wei-button-status-${props.status}`,
-            `wei-button-shape-${props.shape}`,
             `wei-button-size-${props.size}`,
             props.disabled ? 'wei-button-disabled' : '',
         ]);

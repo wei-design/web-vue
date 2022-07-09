@@ -1,7 +1,7 @@
 /**
  * @Author: forguo
  * @Date: 2022/7/2 17:47
- * @Description: slidebar
+ * @Description: 侧边栏配置
  */
 import {ensureLang, lang} from '../utils/lang'
 import guideLocale from '../i18n/pages/guide.json';
