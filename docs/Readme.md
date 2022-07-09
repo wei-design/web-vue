@@ -189,3 +189,32 @@ toDo：...
 [github-pages](https://vitepress.vuejs.org/guide/deploying.html#github-pages)
 
 结合：GitHub Actions完成自动化部署
+
+```yaml
+name: Deploy
+
+on:
+    push:
+        branches:
+            - maser
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 16
+                  cache: yarn
+            - run: yarn install --frozen-lockfile
+
+            - name: Build
+              run: yarn docs:build
+
+            - name: Deploy
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.CL_TOKEN }}
+                  publish_dir: docs/.vitepress/dist
+```
