@@ -66,7 +66,8 @@
         "vite": "^2.9.9",
         "vite-plugin-dts": "^1.2.0",
         "vite-plugin-md": "^0.15.0",
-        "vue-tsc": "^0.34.7"
+        "vue-tsc": "^0.34.7",
+        "vitepress": "^0.22.4"
     },
     "config": {
         "commitizen": {
