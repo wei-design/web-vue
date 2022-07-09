@@ -181,3 +181,11 @@ const nav = [
 
 ### 自定义主题
 
+toDo：...
+
+
+## 部署
+
+[github-pages](https://vitepress.vuejs.org/guide/deploying.html#github-pages)
+
+结合：GitHub Actions完成自动化部署
