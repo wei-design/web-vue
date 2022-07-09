@@ -18,6 +18,7 @@ languages.forEach((lang) => {
     }
 })
 export const config: UserConfig = {
+    base: '/wei-design',
     title: 'Wei Design',
     description: 'A Vue 3 UI Framework',
     lastUpdated: true,
