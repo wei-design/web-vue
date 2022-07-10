@@ -2,8 +2,6 @@
 
 A Vue.js 3 UI library
 
----
-
 <p>
   <a href="http://commitizen.github.io/cz-cli">
     <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
@@ -16,6 +14,14 @@ A Vue.js 3 UI library
 - 🔥 TypeScript
 
 参考[element](https://element-plus.org/)
+
+## 环境
+
+- node：v14.19.0
+
+- npm：6.14.16
+
+- pnpm： 7.1.3
 
 ## 目录结构
 

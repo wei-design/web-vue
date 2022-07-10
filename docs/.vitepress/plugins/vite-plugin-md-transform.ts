@@ -28,7 +28,6 @@ export function VitePluginMdTransform(): Plugin {
             if (!id.endsWith('.md')) return
             // 组件名称
             const componentId = path.basename(id, '.md')
-            console.log(componentId);
             const append: Append = {
                 headers: [],
                 footers: [],
@@ -41,13 +40,11 @@ export function VitePluginMdTransform(): Plugin {
             code = transformVpScriptSetup(code, append)
 
             const pattern = `{${[...languages, languages[0]].join(',')}}/component`
-            console.log(pattern);
             const compPaths = await glob(pattern, {
                 cwd: docRoot,
                 absolute: true,
                 onlyDirectories: true,
             })
-            console.log('compPaths --->', compPaths);
             if (compPaths.some((compPath) => id.startsWith(compPath))) {
                 code = transformComponentMarkdown(id, componentId, code, append)
             }
@@ -111,7 +108,6 @@ const transformComponentMarkdown = (
         `packages/components/${componentId}`
     )
     const isComponent = fs.existsSync(componentPath)
-    console.log(componentPath);
     /**
      * 生成源码链接
      * [组件](--/component/--)

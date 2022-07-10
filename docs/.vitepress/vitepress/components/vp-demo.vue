@@ -17,7 +17,6 @@ const [sourceVisible, toggleSourceVisible] = useToggle(true)
 
 const formatPathDemos = computed(() => {
     const demos = {}
-    console.log(props.demos);
     Object.keys(props.demos).forEach((key) => {
         demos[key.replace('../../examples/', '').replace('.vue', '')] =
             props.demos[key].default

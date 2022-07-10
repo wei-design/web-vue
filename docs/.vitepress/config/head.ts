@@ -12,7 +12,7 @@ export const head: HeadConfig[] = [
         'link',
         {
             rel: 'icon',
-            href: '/images/logo.png',
+            href: '/images/logo-link.png',
             type: 'image',
         },
     ],
@@ -27,7 +27,7 @@ export const head: HeadConfig[] = [
     ['meta', {name: 'keywords', content: `wei-design,A Vue.js 3 UI library,vue,vue3`}],
     ['meta', {name: 'description', content: `wei-design|A Vue.js 3 UI library|vue|vue3`}],
     ['meta', {name: 'author', content: `魏国, forguo, wforguo`}],
-    // ['meta', {name: 'baidu-site-verification', content: `code-bakUos2v8l`}],
+    ['meta', {name: 'baidu-site-verification', content: `code-bakUos2v8l`}],
     ['script', {}, fs.readFileSync(path.resolve(vpRoot, 'lang.js'), 'utf-8')],
     ['script', {}, `
         var _hmt = _hmt || [];

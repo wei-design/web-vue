@@ -2,8 +2,6 @@
 
 A Vue.js 3 UI library
 
----
-
 <p>
   <a href="http://commitizen.github.io/cz-cli">
     <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
