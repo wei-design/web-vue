@@ -216,10 +216,10 @@ jobs:
             - name: Checkout - 检出代码
               uses: actions/checkout@v2
             # Node版本
-            - name: Setup Node.js v14.x
-              uses: actions/setup-node@v1
+            - name: Setup Node.js v16
+              uses: actions/setup-node@v3
               with:
-                  node-version: '14.x'
+                  node-version: 16
                   cache: yarn
             - name: Install NodeModules - 安装依赖
               run: cd docs && yarn install # 安装依赖
