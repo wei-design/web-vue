@@ -2,7 +2,7 @@ name: Deploy
 
 on:
     push:
-        branches: [*]  # master 分支有 push 时触发
+        branches: [master]  # master 分支有 push 时触发
 jobs:
     deploy:
         runs-on: ubuntu-latest
