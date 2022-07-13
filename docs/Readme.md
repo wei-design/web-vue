@@ -193,26 +193,30 @@ name: Deploy
 
 on:
     push:
-        branches:
-            - maser
-
+        branches: [master]  # master 分支有 push 时触发
 jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: actions/setup-node@v3
+            - name: Setup Node.js v14.x
+              uses: actions/setup-node@v3
               with:
-                  node-version: 16
+                  node-version: '14.x'
                   cache: yarn
-            - run: yarn install --frozen-lockfile
+            - name: Install NodeModules - 安装依赖
+              run: cd docs && yarn install # 安装依赖
 
-            - name: Build
-              run: yarn docs:build
+            - name: Build - 打包
+              run: yarn docs:build # 打包
 
-            - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3
+            - name: Dir - 打包结果
+              run: cd docs/.vitepress/dist && ls -ll # 打包结果
+
+            - name: Deploy  - 部署
+              uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
               with:
-                  github_token: ${{ secrets.CL_TOKEN }}
-                  publish_dir: docs/.vitepress/dist
+                  github_token: ${{ secrets.CL_TOKEN }} # github_token，仓库secrets配置
+                  publish_dir: docs/.vitepress/dist  # 部署打包后的 dist 目录
+
 ```

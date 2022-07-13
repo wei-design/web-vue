@@ -2,10 +2,8 @@
     "name": "wei-design",
     "private": false,
     "version": "1.0.0",
-    "files": [
-        "lib/*"
-    ],
-    "main": "lib/wei-design.es.js",
+    "author": "wforguo@qq.com",
+    "license": "ISC",
     "keywords": [
         "wei-design",
         "vue",
@@ -15,13 +13,22 @@
         "javascript",
         "npm"
     ],
-    "author": "wforguo@qq.com",
-    "license": "ISC",
+    "files": [
+        "lib/*"
+    ],
+    "main": "./lib/wei-design.umd.js",
+    "module": "./lib/wei-design.es.js",
+    "exports": {
+        ".": {
+            "import": "./lib/wei-design.es.js",
+            "require": "./lib/wei-design.umd.js"
+        }
+    },
     "scripts": {
         "cz": "git-cz",
         "start": "npm run dev",
-        "dev": "vite --config ./build/lib.config.ts --host",
-        "lib:build": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts",
+        "dev": "vite --config ./build/vite.lib.ts --host",
+        "lib:build": "vue-tsc --noEmit && vite build --config ./build/vite.lib.ts",
         "docs:dev": "npm run -C docs dev",
         "docs:build": "npm run -C docs build",
         "preview": "vite preview",
@@ -36,7 +43,6 @@
         "release:patch": "npm run release -- --release-as patch"
     },
     "dependencies": {
-        "dayjs": "^1.11.3",
         "vue": "^3.2.25"
     },
     "devDependencies": {
@@ -77,5 +83,8 @@
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
+    },
+    "engines": {
+        "node": ">=14.19.0"
     }
 }

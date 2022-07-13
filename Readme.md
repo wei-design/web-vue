@@ -110,7 +110,20 @@ export default defineConfig({
 - commit规范
 - eslint
 
-建议提前配置好，开发体验会更好
+- 建议提前配置好，开发体验会更好
+
+- husky配置
+
+```json
+{
+    "scripts": {
+        "prepare": "husky install"
+    }
+}
+```
+prepare
+
+`npm install` 之后自动执行
 
 ## 文档搭建
 
