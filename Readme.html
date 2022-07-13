@@ -7,7 +7,7 @@
     <meta name="description" content="A Vue 3 UI Framework">
     <link rel="stylesheet" href="/wei-design/assets/style.c2cef83e.css">
     <link rel="modulepreload" href="/wei-design/assets/app.c1d5a8e8.js">
-    <link rel="modulepreload" href="/wei-design/assets/Readme.md.d0c9f7ed.lean.js">
+    <link rel="modulepreload" href="/wei-design/assets/Readme.md.703470b1.lean.js">
     
     <link rel="icon" href="/images/logo-link.png" type="image">
   <meta name="theme-color" content="#ffffff">
@@ -112,33 +112,53 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">]</span>
 </code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>基本效果</p><p><img src="/wei-design/assets/docs.cdafaacf.png" alt=""></p><h3 id="增加源码预览" tabindex="-1">增加源码预览 <a class="header-anchor" href="#增加源码预览" aria-hidden="true">#</a></h3><h3 id="自定义主题" tabindex="-1">自定义主题 <a class="header-anchor" href="#自定义主题" aria-hidden="true">#</a></h3><p>toDo：...</p><h2 id="部署" tabindex="-1">部署 <a class="header-anchor" href="#部署" aria-hidden="true">#</a></h2><p><a href="https://vitepress.vuejs.org/guide/deploying.html#github-pages" target="_blank" rel="noopener noreferrer">github-pages</a></p><p>结合：GitHub Actions完成自动化部署</p><div class="language-yaml line-numbers-mode"><pre><code><span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy
-
+<span class="token comment"># 触发构建动作</span>
+<span class="token comment">#    push:</span>
+<span class="token comment">#        # 触发构建分支[默认分支]</span>
+<span class="token comment">#        branches: [ $default-branch ]</span>
+<span class="token comment">#    pull_request:</span>
 <span class="token key atrule">on</span><span class="token punctuation">:</span>
     <span class="token key atrule">push</span><span class="token punctuation">:</span>
+        <span class="token comment"># 以下 分支有 push 时触发</span>
         <span class="token key atrule">branches</span><span class="token punctuation">:</span>
-            <span class="token punctuation">-</span> maser
+            <span class="token punctuation">-</span> master
+            <span class="token punctuation">-</span> main
+            <span class="token punctuation">-</span> feature/major<span class="token punctuation">-</span>dev
 
+<span class="token comment"># 作业是在同一运行服务器上执行的一组步骤</span>
 <span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+    <span class="token comment"># 作业名称</span>
     <span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+        <span class="token comment"># 运行器（这里是Ubuntu系统）</span>
         <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+        <span class="token comment"># 步骤是可以在作业中运行命令的单个任务</span>
+        <span class="token comment"># 步骤可以是操作或 shell 命令</span>
         <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-            <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
-            <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v3
+            <span class="token comment"># 检出推送的代码</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Checkout <span class="token punctuation">-</span> 检出代码
+              <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+            <span class="token comment"># Node版本</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup Node.js v16
+              <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v3
               <span class="token key atrule">with</span><span class="token punctuation">:</span>
                   <span class="token key atrule">node-version</span><span class="token punctuation">:</span> <span class="token number">16</span>
                   <span class="token key atrule">cache</span><span class="token punctuation">:</span> yarn
-            <span class="token punctuation">-</span> <span class="token key atrule">run</span><span class="token punctuation">:</span> yarn install <span class="token punctuation">-</span><span class="token punctuation">-</span>frozen<span class="token punctuation">-</span>lockfile
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install NodeModules <span class="token punctuation">-</span> 安装依赖
+              <span class="token key atrule">run</span><span class="token punctuation">:</span> cd docs <span class="token important">&amp;&amp;</span> yarn install <span class="token comment"># 安装依赖</span>
 
-            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build
-              <span class="token key atrule">run</span><span class="token punctuation">:</span> yarn docs<span class="token punctuation">:</span>build
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build <span class="token punctuation">-</span> 打包
+              <span class="token key atrule">run</span><span class="token punctuation">:</span> yarn docs<span class="token punctuation">:</span>build <span class="token comment"># 打包</span>
 
-            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy
-              <span class="token key atrule">uses</span><span class="token punctuation">:</span> peaceiris/actions<span class="token punctuation">-</span>gh<span class="token punctuation">-</span>pages@v3
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Dir <span class="token punctuation">-</span> 打包结果
+              <span class="token key atrule">run</span><span class="token punctuation">:</span> cd docs/.vitepress/dist <span class="token important">&amp;&amp;</span> ls <span class="token punctuation">-</span>ll <span class="token comment"># 打包结果</span>
+
+            <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy  <span class="token punctuation">-</span> 部署
+              <span class="token key atrule">uses</span><span class="token punctuation">:</span> peaceiris/actions<span class="token punctuation">-</span>gh<span class="token punctuation">-</span>pages@v3 <span class="token comment"># 使用部署到 GitHub pages 的 action</span>
               <span class="token key atrule">with</span><span class="token punctuation">:</span>
-                  <span class="token key atrule">github_token</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.CL_TOKEN <span class="token punctuation">}</span><span class="token punctuation">}</span>
-                  <span class="token key atrule">publish_dir</span><span class="token punctuation">:</span> docs/.vitepress/dist
-</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div></div></div><footer class="page-footer" data-v-8fcebc32 data-v-b65b4b36><div class="edit" data-v-b65b4b36><div class="edit-link" data-v-b65b4b36 data-v-55695e90><!----></div></div><div class="updated" data-v-b65b4b36><p class="last-updated" data-v-b65b4b36 data-v-7e06cdca><span class="prefix" data-v-7e06cdca>Last Updated:</span><span class="datetime" data-v-7e06cdca></span></p></div></footer><!----><!--[--><!--]--></div></main></div><!----><!--]--></div>
-    <script>__VP_HASH_MAP__ = JSON.parse("{\"readme.md\":\"d0c9f7ed\",\"index.md\":\"71aab88c\",\"zh-cn_component_button.md\":\"d89546c0\",\"zh-cn_guide_changelog.md\":\"e8f8f30f\",\"zh-cn_guide_installation.md\":\"84c81452\",\"zh-cn_guide_quickstart.md\":\"9279636a\",\"zh-cn_guide_theming.md\":\"a770a042\",\"zh-cn_index.md\":\"cefb4be3\",\"zh-cn_resource_index.md\":\"d565de4c\"}")</script>
+                  <span class="token key atrule">github_token</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.CL_TOKEN <span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token comment"># github_token，仓库secrets配置</span>
+                  <span class="token key atrule">publish_dir</span><span class="token punctuation">:</span> docs/.vitepress/dist  <span class="token comment"># 部署打包后的 dist 目录</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div></div></div><footer class="page-footer" data-v-8fcebc32 data-v-b65b4b36><div class="edit" data-v-b65b4b36><div class="edit-link" data-v-b65b4b36 data-v-55695e90><!----></div></div><div class="updated" data-v-b65b4b36><p class="last-updated" data-v-b65b4b36 data-v-7e06cdca><span class="prefix" data-v-7e06cdca>Last Updated:</span><span class="datetime" data-v-7e06cdca></span></p></div></footer><!----><!--[--><!--]--></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"readme.md\":\"703470b1\",\"index.md\":\"3f6ff049\",\"zh-cn_component_button.md\":\"0f7a56d5\",\"zh-cn_guide_changelog.md\":\"baec82b6\",\"zh-cn_guide_installation.md\":\"dc480fb6\",\"zh-cn_guide_quickstart.md\":\"e03d0abd\",\"zh-cn_guide_theming.md\":\"a5fc8b12\",\"zh-cn_index.md\":\"83202d95\",\"zh-cn_resource_index.md\":\"23dd6d89\"}")</script>
     <script type="module" async src="/wei-design/assets/app.c1d5a8e8.js"></script>
     
   </body>
