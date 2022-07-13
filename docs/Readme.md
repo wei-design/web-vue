@@ -188,22 +188,20 @@ toDo：...
 
 结合：GitHub Actions完成自动化部署
 
-```yaml# 工作流程名称
-name: Blog CI
-on:
-    push:
-        branches:
-            - master
-            - main
-            - release
-            - dev
-
+```yaml
+name: Deploy
 # 触发构建动作
 #    push:
 #        # 触发构建分支[默认分支]
 #        branches: [ $default-branch ]
 #    pull_request:
-
+on:
+    push:
+        # 以下 分支有 push 时触发
+        branches:
+            - master
+            - main
+            - feature/major-dev
 
 # 作业是在同一运行服务器上执行的一组步骤
 jobs:
@@ -211,21 +209,30 @@ jobs:
     deploy:
         # 运行器（这里是Ubuntu系统）
         runs-on: ubuntu-latest
-        # 作业名称（同deploy）
-        name: Deploy
         # 步骤是可以在作业中运行命令的单个任务
         # 步骤可以是操作或 shell 命令
         steps:
             # 检出推送的代码
-            - name: Checkout
+            - name: Checkout - 检出代码
               uses: actions/checkout@v2
-            # 发布到云开发
-            - name: Deploy to Tencent CloudBase
-              uses: TencentCloudBase/cloudbase-action@v2
+            # Node版本
+            - name: Setup Node.js v14.x
+              uses: actions/setup-node@v1
               with:
-              # 以下参数配置于 github secrets
-                 secretId: ${{secrets.SECRETID}}
-                 secretKey: ${{secrets.SECRETKEY}}
-                 envId: ${{secrets.ENV_ID}}
+                  node-version: '14.x'
+                  cache: yarn
+            - name: Install NodeModules - 安装依赖
+              run: cd docs && yarn install # 安装依赖
 
+            - name: Build - 打包
+              run: yarn docs:build # 打包
+
+            - name: Dir - 打包结果
+              run: cd docs/.vitepress/dist && ls -ll # 打包结果
+
+            - name: Deploy  - 部署
+              uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
+              with:
+                  github_token: ${{ secrets.CL_TOKEN }} # github_token，仓库secrets配置
+                  publish_dir: docs/.vitepress/dist  # 部署打包后的 dist 目录
 ```
