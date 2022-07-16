@@ -2,8 +2,8 @@
 import {computed, getCurrentInstance, toRef} from 'vue'
 import {useClipboard, useToggle} from '@vueuse/core'
 
-import Example from './demo/vp-example.vue'
-import SourceCode from './demo/vp-source-code.vue'
+import Example from './vp-example.vue'
+import SourceCode from './vp-source-code.vue'
 
 const props = defineProps<{
     demos: object
@@ -28,17 +28,16 @@ const formatPathDemos = computed(() => {
 const decodedDescription = computed(() =>
     decodeURIComponent(props.description!)
 )
-
 </script>
 
 <template>
     <ClientOnly>
         <!-- danger here DO NOT USE INLINE SCRIPT TAG -->
-        <p text="sm" v-html="decodedDescription"/>
+        <div text="sm" v-html="decodedDescription"/>
 
         <div class="example">
             <Example :demo="formatPathDemos[path]" :file="path"/>
-            <SourceCode v-if="sourceVisible" :source="source"/>
+            <SourceCode v-show="sourceVisible" :source="source"/>
             <div
                 class="example-float-control"
                 @click="toggleSourceVisible(!sourceVisible)"
@@ -53,36 +52,6 @@ const decodedDescription = computed(() =>
 .example {
     border: 1px solid var(--border-color);
     border-radius: var(--el-border-radius-base);
-
-    .op-btns {
-        padding: 0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        height: 2.5rem;
-
-        .el-icon {
-            &:hover {
-                color: var(--text-color);
-            }
-        }
-
-        .op-btn {
-            margin: 0 0.5rem;
-            cursor: pointer;
-            color: var(--text-color-lighter);
-            transition: 0.2s;
-
-            &.github a {
-                transition: 0.2s;
-                color: var(--text-color-lighter);
-
-                &:hover {
-                    color: var(--text-color);
-                }
-            }
-        }
-    }
 
     &-float-control {
         display: flex;

@@ -9,6 +9,6 @@ export default ({
     enhanceApp: ({app}: any) => {
         // 注册全局组件
         app.use(WeiDesign);
-        app.component('Demo', VPDemo)
+        app.component('Demo', VPDemo);
     }
 })

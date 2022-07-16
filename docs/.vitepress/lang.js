@@ -15,6 +15,7 @@
             .concat([`${defaultLang}`])
             .concat(location.pathname.split('/').slice(2))
             .join('/')
+        console.log(toPath);
         location.pathname =
             toPath.endsWith('.html') || toPath.endsWith('/') ? toPath : toPath.concat('/')
     }

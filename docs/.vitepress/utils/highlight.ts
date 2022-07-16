@@ -5,7 +5,9 @@
  */
 // ref https://github.com/vuejs/vitepress/blob/main/src/node/markdown/plugins/highlight.ts
 import chalk from 'chalk'
+// @ts-ignore
 import escapeHtml from 'escape-html'
+// @ts-ignore
 import prism from 'prismjs'
 import consola from 'consola'
 

@@ -1,14 +1,19 @@
 <template>
-    <div class="mb-4">
+    <div class="button-basic">
         <wei-button>Default</wei-button>
         <wei-button type="primary">Primary</wei-button>
-        <wei-button type="success">Success</wei-button>
-        <wei-button type="info">Info</wei-button>
-        <wei-button type="warning">Warning</wei-button>
-        <wei-button type="danger">Danger</wei-button>
-        <wei-button>中文</wei-button>
+        <wei-button @click="handleClick">点击</wei-button>
     </div>
 </template>
 
 <script lang="ts" setup>
+const handleClick = () => {
+    alert('click me');
+}
 </script>
+
+<style scoped>
+.wei-button {
+    margin-right: 12px;
+}
+</style>

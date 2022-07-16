@@ -12,15 +12,15 @@ defineProps({
 </script>
 
 <template>
-    <div class="example-showcase">
-        <ClientOnly>
+    <ClientOnly>
+        <div class="example-component">
             <component :is="demo" v-if="demo" v-bind="$attrs"/>
-        </ClientOnly>
-    </div>
+        </div>
+    </ClientOnly>
 </template>
 
 <style lang="scss" scoped>
-.example-showcase {
+.example-component {
     padding: 1.5rem;
     margin: 24px 0;
     background-color: var(--bg-color);

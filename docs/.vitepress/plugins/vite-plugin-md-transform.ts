@@ -6,16 +6,15 @@
 
 // https://cn.vitejs.dev/guide/api-plugin.html
 
-import fs from 'fs'
 import path from 'path'
 import glob from 'fast-glob'
-import {projRoot, docsDirName, docRoot, REPO_BRANCH, REPO_PATH } from '../config/global'
-import {lang, languages} from '../utils/lang'
-import footerLocale from '../i18n/component/footer.json'
+import chalk from "chalk";
+import {docRoot} from '../config/global'
+import { lang } from '../utils/lang'
 
 import type {Plugin} from 'vite'
 
-type Append = Record<'headers' | 'footers' | 'scriptSetups', string[]>
+type Append = Record<'headers' | 'scriptSetups', string[]>
 
 export function VitePluginMdTransform(): Plugin {
     return {
@@ -26,38 +25,30 @@ export function VitePluginMdTransform(): Plugin {
         async transform(code, id) {
             // md文件判断
             if (!id.endsWith('.md')) return
-            // 组件名称
+            /**
+             * 获取组件名
+             * path.basename：返回路径中的最后一部分。同 Unix 命令 bashname 类似。
+             */
             const componentId = path.basename(id, '.md')
             const append: Append = {
                 headers: [],
-                footers: [],
                 scriptSetups: [
-                    // 加载组件demos
+                    // 在 Markdown中引入组件
                     `const demos = import.meta.globEager('../../examples/${componentId}/*.vue')`,
                 ],
             }
 
-            code = transformVpScriptSetup(code, append)
-
-            const pattern = `{${[...languages, languages[0]].join(',')}}/component`
-            const compPaths = await glob(pattern, {
-                cwd: docRoot,
-                absolute: true,
-                onlyDirectories: true,
-            })
-            if (compPaths.some((compPath) => id.startsWith(compPath))) {
-                code = transformComponentMarkdown(id, componentId, code, append)
-            }
-
+            // const modules = import.meta.glob(`../../examples/${componentId}/*.vue`)
+            // console.log(modules);
             return combineMarkdown(
                 code,
                 [combineScriptSetup(append.scriptSetups), ...append.headers],
-                append.footers
             )
         },
     }
 }
 
+// 在 Markdown 中引入组件
 const combineScriptSetup = (codes: string[]) =>
     `\n<script setup>
 ${codes.join('\n')}
@@ -67,7 +58,6 @@ ${codes.join('\n')}
 const combineMarkdown = (
     code: string,
     headers: string[],
-    footers: string[]
 ) => {
     const frontmatterEnds = code.indexOf('---\n\n') + 4
     const firstSubheader = code.search(/\n## \w/)
@@ -76,55 +66,5 @@ const combineMarkdown = (
     if (headers.length > 0)
         code =
             code.slice(0, sliceIndex) + headers.join('\n') + code.slice(sliceIndex)
-    code += footers.join('\n')
-
     return `${code}\n`
-}
-
-const vpScriptSetupRE = /<vp-script\s(.*\s)?setup(\s.*)?>([\s\S]*)<\/vp-script>/
-
-const transformVpScriptSetup = (code: string, append: Append) => {
-    const matches = code.match(vpScriptSetupRE)
-    if (matches) code = code.replace(matches[0], '')
-    const scriptSetup = matches?.[3] ?? ''
-    if (scriptSetup) append.scriptSetups.push(scriptSetup)
-    return code
-}
-
-const GITHUB_BLOB_URL = `https://github.com/${REPO_PATH}/blob/${REPO_BRANCH}`
-const GITHUB_TREE_URL = `https://github.com/${REPO_PATH}/tree/${REPO_BRANCH}`
-const transformComponentMarkdown = (
-    id: string,
-    componentId: string,
-    code: string,
-    append: Append
-) => {
-    // 文档URL
-    const docUrl = `${GITHUB_BLOB_URL}/${docsDirName}/${lang}/component/${componentId}.md`
-    // 组件URL
-    const componentUrl = `${GITHUB_TREE_URL}/packages/components/${componentId}`
-    const componentPath = path.resolve(
-        projRoot,
-        `packages/components/${componentId}`
-    )
-    const isComponent = fs.existsSync(componentPath)
-    /**
-     * 生成源码链接
-     * [组件](--/component/--)
-     * [文档](--/docs/--)
-     */
-    const links = [[footerLocale[lang].docs, docUrl]]
-    if (isComponent) links.unshift([footerLocale[lang].component, componentUrl])
-    const linksText = links
-        .filter((i) => i)
-        .map(([text, link]) => `[${text}](${link})`)
-        .join(' • ')
-
-    const sourceSection = `
-  ## ${footerLocale[lang].source}
-  ${linksText}
-`
-    append.footers.push(sourceSection)
-
-    return code
 }
