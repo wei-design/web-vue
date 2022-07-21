@@ -1,4 +1,4 @@
-import {defineComponent, App, PropType, SetupContext} from 'vue';
+import { defineComponent, App, PropType, SetupContext } from 'vue';
 import classNames from '../../utils/className';
 import './index.scss';
 
@@ -24,11 +24,10 @@ const ButtonProps = {
 const Button = defineComponent({
     name: 'WeiButton',
     props: ButtonProps,
-    setup(props, {slots}: SetupContext) {
+    setup(props, { slots }: SetupContext) {
         const classString = classNames([
             'wei-button',
             `wei-button-type-${props.type}`,
-            `wei-button-size-${props.size}`,
             props.disabled ? 'wei-button-disabled' : '',
         ]);
         return () => (
@@ -47,6 +46,7 @@ const Button = defineComponent({
 });
 
 Button.install = function (app: App) {
+    // 组件注册，按需引入
     app.component(Button.name, Button);
     return app;
 };

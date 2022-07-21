@@ -2,12 +2,11 @@
 
 A Vue.js 3 UI library
 
-<p>
-  <a href="http://commitizen.github.io/cz-cli">
-    <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
-  </a>
-  <br>
-</p>
+[![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli)
+
+[![ElementPlus version badge](https://img.shields.io/npm/v/wei-design.svg?style=flat-square)](https://www.npmjs.org/package/wei-design)
+
+---
 
 - 🔭 [Vite](https://vitejs.dev)
 - 💪 [Vue3](https://vuejs.org)
@@ -17,11 +16,7 @@ A Vue.js 3 UI library
 
 ## 环境
 
-- node：v14.19.0
-
-- npm：6.14.16
-
-- pnpm： 7.1.3
+- node：>=16.0.0
 
 ## 目录结构
 
@@ -168,3 +163,4 @@ npm run -C docs build
 TypeError: Invalid value used as weak map key
 
 **md中有无法解析的标签导致**
+

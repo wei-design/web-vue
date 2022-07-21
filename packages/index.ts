@@ -1,18 +1,23 @@
+/**
+ * @Author: forguo
+ * @Date: 2022/7/17 15:48
+ * @Description: 组件入口
+ */
 import { App } from 'vue';
 import WeiButton from './components/button';
 
-const components = [WeiButton];
+// 导出组件
+export const components: any = {
+    WeiButton,
+};
 
-// 能够完整引入组件
+// 完整引入组件
 const install = function (app: App) {
-    components.forEach((component) => {
-        app.use(component as unknown as { install: () => any });
+    Object.keys(components).forEach((key) => {
+        app.use(components[key]);
     });
     return app;
 };
-
-// 用于按需引入，每个组件也得单独定义install方法
-export { WeiButton };
 
 export default {
     install,

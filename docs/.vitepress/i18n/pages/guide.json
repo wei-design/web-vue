@@ -2,7 +2,7 @@
     "zh-CN": {
         "intro": {
             "text": "基础",
-            "children": [
+            "items": [
                 {
                     "text": "安装",
                     "link": "/guide/installation"
@@ -15,7 +15,7 @@
         },
         "advanced": {
             "text": "进阶",
-            "children": [
+            "items": [
                 {
                     "text": "主题",
                     "link": "/guide/theming"

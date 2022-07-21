@@ -13,7 +13,6 @@ specifiers:
   commitizen: ^4.2.4
   cross-env: ^7.0.3
   cz-conventional-changelog: ^3.3.0
-  dayjs: ^1.11.3
   eslint: ^8.17.0
   eslint-config-prettier: ^8.5.0
   eslint-define-config: ^1.5.0
@@ -32,7 +31,6 @@ specifiers:
   vue-tsc: ^0.34.7
 
 dependencies:
-  dayjs: 1.11.3
   vue: 3.2.37
 
 devDependencies:
@@ -1735,10 +1733,6 @@ packages:
   /dateformat/3.0.3:
     resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
     dev: true
-
-  /dayjs/1.11.3:
-    resolution: {integrity: sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==}
-    dev: false
 
   /debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}

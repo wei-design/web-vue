@@ -33,7 +33,7 @@ const decodedDescription = computed(() =>
 <template>
     <ClientOnly>
         <!-- danger here DO NOT USE INLINE SCRIPT TAG -->
-        <div text="sm" v-html="decodedDescription"/>
+        <div v-html="decodedDescription"/>
 
         <div class="example">
             <Example :demo="formatPathDemos[path]" :file="path"/>

@@ -1,4 +1,4 @@
-import {isArray, isString, isObject} from './util';
+import { isArray, isString, isObject } from './util';
 
 function className(...args: any[]) {
     const classes = [];

@@ -13,11 +13,11 @@ $smloading: 2px 5px;
 $mdloading: 3px 6px;
 $lgloading: 4px 8px;
 .wei-button {
+    padding: $md;
     overflow: hidden;
     border-radius: 6px;
     border: 0;
     text-align: center;
-    font-family: PingFangSC-Regular;
     display: inline-block;
     position: relative;
     outline: none;
@@ -28,41 +28,7 @@ $lgloading: 4px 8px;
     white-space: nowrap;
     transition: all 0.1s linear;
     box-sizing: border-box;
-    cursor: pointer;
-
-    .wei-button-inner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        justify-content: center;
-
-        .wei-button-icon {
-            display: inline-block;
-            margin-right: 8px;
-            line-height: 1;
-        }
-
-        .wei-button-loading-only {
-            display: block;
-            margin: 0;
-            height: 32px;
-            width: 32px;
-        }
-
-        .wei-button-icon-only {
-            display: block;
-            font-size: 12px;
-            margin: 0;
-            height: 16px;
-            width: 16px;
-        }
-    }
 }
-
-.wei-button-hasicon {
-    padding: 10px !important;
-}
-
 @mixin wei-button-colors($color, $type) {
     background: $color;
     color: $color;

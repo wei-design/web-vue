@@ -5,6 +5,7 @@
  */
 import {ensureLang, lang} from '../utils/lang'
 import navLocale from '../i18n/pages/nav.json'
+import {REPO_PATH } from './global'
 
 function getNav() {
     return Object.values(navLocale[lang]).map(item => ({
@@ -14,4 +15,13 @@ function getNav() {
     }))
 }
 
-export const nav = getNav()
+const dropDown = [{
+    text: '更多',
+    items: [
+        { text: 'GitHub', link: `https://github.com/${REPO_PATH}`, icon: 'github'},
+        { text: 'Blog', link: 'https://forguo.cn' },
+    ]
+}];
+
+
+export const nav = [...getNav(), ...dropDown]

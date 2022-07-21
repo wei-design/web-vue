@@ -9,7 +9,7 @@ import componentLocale from '../i18n/pages/component.json';
 
 type Item = {
     text: string
-    children?: Item[]
+    items?: Item[]
     link?: string
 }
 
@@ -30,11 +30,11 @@ const getSidebar = () => {
     }
 }
 
-function mapPrefix(item: Item, lang: string, prefix = '') {
-    if (item.children && item.children.length > 0) {
+function mapPrefix(item: Item, lang: string, prefix = ''): Item {
+    if (item.items && item.items.length > 0) {
         return {
             ...item,
-            children: item.children.map((child) => mapPrefix(child, lang, prefix)),
+            items: item.items.map((child) => mapPrefix(child, lang, prefix)),
         }
     }
     return {

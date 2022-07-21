@@ -1,7 +1,7 @@
 {
     "name": "wei-design",
     "private": false,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "wforguo@qq.com",
     "license": "ISC",
     "keywords": [
@@ -14,7 +14,8 @@
         "npm"
     ],
     "files": [
-        "lib/*"
+        "lib/*",
+        "packages/*"
     ],
     "main": "./lib/wei-design.umd.js",
     "module": "./lib/wei-design.es.js",
@@ -41,6 +42,11 @@
         "release:major": "npm run release -- --release-as major",
         "release:minor": "npm run release -- --release-as minor",
         "release:patch": "npm run release -- --release-as patch"
+    },
+    "homepage": "https://github.com/wforguo/wei-design.git",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wforguo/wei-design.git"
     },
     "dependencies": {
         "vue": "^3.2.25"
@@ -85,6 +91,6 @@
         }
     },
     "engines": {
-        "node": ">=14.19.0"
+        "node": ">=16.0.0"
     }
 }

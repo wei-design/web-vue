@@ -8,7 +8,7 @@ import {head} from './config/head';
 import {sidebar} from './config/slidebar';
 import {nav} from './config/nav';
 import {mdPlugin} from './config/plugins'
-import {docsDirName, REPO_BRANCH, REPO_PATH } from './config/global'
+import {REPO_PATH, REPO_BRANCH} from './config/global'
 import { languages } from './utils/lang';
 import * as process from "process";
 
@@ -22,18 +22,19 @@ languages.forEach((lang) => {
 const env = process.env.NODE_ENV;
 
 export const config: UserConfig = {
+    head,
+    lang: 'zh-CN',
     base: env === 'production' ? '/wei-design/' : '/',
     title: 'Wei Design',
     description: 'A Vue 3 UI Framework',
     lastUpdated: true,
-    head,
     themeConfig: {
-        repo: REPO_PATH,
-        docsBranch: REPO_BRANCH,
-        docsDir: docsDirName,
-
+        editLink: {
+            // 编辑此页
+            pattern: `https://github.com/${REPO_PATH}/edit/${REPO_BRANCH}/docs/:path`,
+        },
+        siteTitle: 'Wei Design',
         lastUpdated: 'Last Updated',
-
         logo: '/images/logo.png',
         logoSmall: '/images/logo.png',
 
@@ -55,6 +56,10 @@ export const config: UserConfig = {
                 editLinkText: 'Edit on GitHub',
                 lastUpdated: 'LastUpdate',
             },
+        },
+        footer: {
+            message: 'Released under the MIT License.',
+            copyright: 'Copyright © 2022-present forguo'
         }
     },
     locales: {
