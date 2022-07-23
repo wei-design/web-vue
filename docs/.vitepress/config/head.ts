@@ -4,9 +4,6 @@
  * @Description: head
  */
 import type {HeadConfig} from 'vitepress'
-import fs from "fs";
-import path from "path";
-import { vpRoot } from './global'
 export const head: HeadConfig[] = [
     [
         'link',
@@ -28,7 +25,6 @@ export const head: HeadConfig[] = [
     ['meta', {name: 'description', content: `wei-design|A Vue.js 3 UI library|vue|vue3`}],
     ['meta', {name: 'author', content: `魏国, forguo, wforguo`}],
     ['meta', {name: 'baidu-site-verification', content: `code-bakUos2v8l`}],
-    ['script', {}, fs.readFileSync(path.resolve(vpRoot, 'lang.js'), 'utf-8')],
     ['script', {}, `
         var _hmt = _hmt || [];
         (function() {

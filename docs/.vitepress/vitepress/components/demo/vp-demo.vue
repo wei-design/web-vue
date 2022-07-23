@@ -1,12 +1,11 @@
 <script lang="ts" setup>
-import {computed, getCurrentInstance, toRef} from 'vue'
+import {computed, getCurrentInstance, ref} from 'vue'
 import {useClipboard, useToggle} from '@vueuse/core'
 
 import Example from './vp-example.vue'
 import SourceCode from './vp-source-code.vue'
 
 const props = defineProps<{
-    demos: object
     source: string
     path: string
     rawSource: string
@@ -14,16 +13,6 @@ const props = defineProps<{
 }>()
 
 const [sourceVisible, toggleSourceVisible] = useToggle(true)
-
-const formatPathDemos = computed(() => {
-    const demos = {}
-    Object.keys(props.demos).forEach((key) => {
-        demos[key.replace('../../examples/', '').replace('.vue', '')] =
-            props.demos[key].default
-    })
-
-    return demos
-})
 
 const decodedDescription = computed(() =>
     decodeURIComponent(props.description!)
@@ -36,7 +25,7 @@ const decodedDescription = computed(() =>
         <div v-html="decodedDescription"/>
 
         <div class="example">
-            <Example :demo="formatPathDemos[path]" :file="path"/>
+            <Example :path="path" />
             <SourceCode v-show="sourceVisible" :source="source"/>
             <div
                 class="example-float-control"

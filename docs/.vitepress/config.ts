@@ -9,18 +9,9 @@ import {sidebar} from './config/slidebar';
 import {nav} from './config/nav';
 import {mdPlugin} from './config/plugins'
 import {REPO_PATH, REPO_BRANCH} from './config/global'
-import { languages } from './utils/lang';
 import * as process from "process";
 
-const locales: any = {}
-languages.forEach((lang) => {
-    locales[`/${lang}`] = {
-        label: lang,
-        lang,
-    }
-});
 const env = process.env.NODE_ENV;
-
 export const config: UserConfig = {
     head,
     lang: 'zh-CN',
@@ -40,9 +31,8 @@ export const config: UserConfig = {
 
         sidebar, // 没有s
         nav,
-        langs: languages,
         locales: {
-            '/zh-CN/': {
+            '/zh-CN': {
                 label: '简体中文',
                 selectText: '选择语言',
                 ariaLabel: '选择语言',
@@ -63,7 +53,7 @@ export const config: UserConfig = {
         }
     },
     locales: {
-        '/zh-CN/': {
+        '/zh-CN': {
             lang: 'zh-CN',
             title: 'Wei Design',
             description: 'A Vue 3 UI Framework',

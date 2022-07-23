@@ -1,3 +1,8 @@
+/**
+ * @Author: forguo
+ * @Date: 2022/7/23 21:25
+ * @Description: 主题配置
+ */
 import DefaultTheme from 'vitepress/theme'
 import WeiDesign from '../../../packages'
 import VPApp, {NotFound, VPDemo} from '../vitepress';

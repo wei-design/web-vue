@@ -8,7 +8,6 @@ import mdContainer from 'markdown-it-container'
 import type Token from 'markdown-it/lib/token'
 import {highlight} from '../utils/highlight'
 import { docRoot } from './global';
-import chalk from "chalk";
 const localMd = MarkdownIt()
 
 interface ContainerOpts {
@@ -56,8 +55,7 @@ export const mdPlugin = (md: MarkdownIt) => {
                 if (!source) throw new Error(`Incorrect source file: ${sourceFile}`)
                 // opening tag
                 return `<Demo
-                        :demos="demos"
-                        source="${encodeURIComponent(highlight(source, 'vue'))}"
+                        source="${encodeURIComponent(highlight(source, 'js'))}"
                         path="${sourceFile}"
                         raw-source="${encodeURIComponent(source)}"
                         description="${localMd.render(description)}">`

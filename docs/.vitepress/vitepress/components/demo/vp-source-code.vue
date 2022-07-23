@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import {computed} from 'vue'
-
+import {computed, onBeforeMount} from 'vue'
 const props = defineProps({
     source: {
         type: String,
@@ -15,7 +14,7 @@ const decoded = computed(() => {
 
 <template>
     <div class="example-source">
-        <div class="example-source-content language-vue" v-html="decoded"/>
+        <div class="example-source-content language-vue" v-html="decoded" />
     </div>
 </template>
 
@@ -23,7 +22,6 @@ const decoded = computed(() => {
 .example-source {
     .language-vue {
         margin: 0;
-        border-radius: 0;
     }
 }
 </style>

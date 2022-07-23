@@ -1,5 +1,6 @@
 ---
 layout: home
+editLink: false
 
 hero:
   name: Wei Design

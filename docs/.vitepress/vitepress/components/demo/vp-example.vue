@@ -1,20 +1,33 @@
 <script lang="ts" setup>
-defineProps({
-    file: {
-        type: String,
-        required: true,
-    },
-    demo: {
-        type: Object,
-        required: true,
-    },
+import {onBeforeMount, shallowRef} from "vue";
+const props = defineProps<{
+    source?: string
+    path?: string
+}>()
+
+// 创建一个跟踪自身 .value 变化的 ref，但不会使其值也变成响应式的。
+let dynamicComponent = shallowRef(null);
+
+onBeforeMount(() => {
+    // 动态加载示列组件
+    const dynamicPath = `../../../../examples/${props.path}.vue`
+    /* @vite-ignore */
+    import(dynamicPath).then((module) => {
+        dynamicComponent.value = module.default
+    })
 })
+
 </script>
 
 <template>
     <ClientOnly>
         <div class="example-component">
-            <component :is="demo" v-if="demo" v-bind="$attrs"/>
+            <component
+                :is="dynamicComponent"
+                v-if="dynamicComponent"
+                v-bind="$attrs"
+            />
+            <div v-else style="min-height: 36px;">loading...</div>
         </div>
     </ClientOnly>
 </template>
