@@ -5,4 +5,4 @@ lang: zh-CN
 
 ## 资源
 
-[Sketch](https://element.eleme.cn/2.0/#/zh-CN/resource)
+[Sketch](https://element-plus.org/zh-CN/resource/index.html)

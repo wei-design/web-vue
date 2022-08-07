@@ -11,7 +11,7 @@ import Markdown from 'vite-plugin-md';
 // 提取ts文件
 import dts from 'vite-plugin-dts';
 import dayjs from 'dayjs';
-import pkg from '../package.json';
+import pkg from './package.json';
 const { version: APP_VERSION } = pkg;
 
 // 文档: https://vitejs.dev/config/
