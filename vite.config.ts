@@ -29,8 +29,8 @@ export default (configEnv: any) => {
         },
         resolve: {
             alias: {
-                '@': resolve(__dirname, '../src'),
-                '@/packages': resolve(__dirname, '../packages'),
+                '@': resolve(__dirname, './src'),
+                '@/packages': resolve(__dirname, './packages'),
             },
         },
         define: {
@@ -40,7 +40,7 @@ export default (configEnv: any) => {
         build: {
             outDir: 'lib',
             lib: {
-                entry: resolve(__dirname, '../packages/index.ts'),
+                entry: resolve(__dirname, './packages/index.ts'),
                 name: 'WeiDesign',
                 fileName: (format) => `wei-design.${format}.js`,
             },
