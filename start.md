@@ -1,10 +1,10 @@
-# Wei-Design
+# We-Design
 
 A Vue.js 3 UI library
 
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli)
 
-[![WeiDesign version badge](https://img.shields.io/npm/v/wei-design.svg?style=flat-square)](https://www.npmjs.org/package/wei-design)
+[![WeDesign version badge](https://img.shields.io/npm/v/we-design.svg?style=flat-square)](https://www.npmjs.org/package/we-design)
 
 ---
 
@@ -14,11 +14,25 @@ A Vue.js 3 UI library
 
 参考[element](https://element-plus.org/)
 
+## 将会学会
+
+### 搭建
+基于`vite`和`typescript`搭建`vue3`项目
+
+### 开发
+一个组件库的开发过程
+
+### 发布
+结合`github ci`来发布组件库到`npm`
+
 ## 环境
 
 - node：>=16.0.0
 
 ## 目录结构
+
+<details>
+<summary>查看目录</summary>
 
 ```
 ├── config                              # 配置文件
@@ -44,6 +58,7 @@ A Vue.js 3 UI library
 ├── README.md                           # 项目描述信息
 
 ```
+</details>
 
 ## 初始化
 
@@ -74,6 +89,16 @@ yarn create vite vite-app-vue --template vue-tsc
 ```
 
 ## 基础配置
+
+### 包管理
+
+添加`.npmrc`
+
+```
+shamefully-hoist=true
+```
+
+作用是将安装的依赖包的依赖包...做扁平化处理，都放在同一级
 
 ### 环境
 
@@ -156,6 +181,17 @@ build/doc.config.js
 
 ```shell
 npm run -C docs build
+```
+
+## 发布
+
+### package配置说明
+
+```js
+{
+    //  we-design【组织】，web-vue【包名】
+    "name": "@we-design/web-vue",
+}
 ```
 
 ## 问题及解决

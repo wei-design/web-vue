@@ -11,7 +11,7 @@ lang: zh-CN
 
 ### 版本
 
-[![ElementPlus version badge](https://img.shields.io/npm/v/wei-design.svg?style=flat-square)](https://www.npmjs.org/package/wei-design)
+[![ElementPlus version badge](https://img.shields.io/npm/v/we-design.svg?style=flat-square)](https://www.npmjs.org/package/we-design)
 
 ## 安装
 
@@ -21,13 +21,13 @@ lang: zh-CN
 # 使用npm、yarn或者pnpm
 
 # NPM
-$ npm install wei-design --save
+$ npm install we-design --save
 
 # Yarn
-$ yarn add wei-design
+$ yarn add we-design
 
 # pnpm
-$ pnpm install wei-design
+$ pnpm install we-design
 ```
 
 ### CDN

@@ -15,8 +15,8 @@ const env = process.env.NODE_ENV;
 export const config: UserConfig = {
     head,
     lang: 'zh-CN',
-    base: env === 'production' ? '/wei-design/' : '/',
-    title: 'Wei Design',
+    base: env === 'production' ? '/we-design/' : '/',
+    title: 'We Design',
     description: 'A Vue 3 UI Framework',
     lastUpdated: true,
     themeConfig: {
@@ -24,7 +24,7 @@ export const config: UserConfig = {
             // 编辑此页
             pattern: `https://github.com/${REPO_PATH}/edit/${REPO_BRANCH}/docs/:path`,
         },
-        siteTitle: 'Wei Design',
+        siteTitle: 'We Design',
         lastUpdated: 'Last Updated',
         logo: '/images/logo.png',
         logoSmall: '/images/logo.png',
@@ -55,12 +55,12 @@ export const config: UserConfig = {
     locales: {
         '/zh-CN': {
             lang: 'zh-CN',
-            title: 'Wei Design',
+            title: 'We Design',
             description: 'A Vue 3 UI Framework',
         },
         '/en-US/': {
             lang: 'en-US',
-            title: 'Wei Design',
+            title: 'We Design',
             description: 'A Vue 3 UI Framework',
         },
     },

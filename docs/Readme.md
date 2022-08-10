@@ -1,4 +1,4 @@
-# Wei-Design
+# we-design
 
 A Vue.js 3 UI library
 
@@ -19,7 +19,7 @@ A Vue.js 3 UI library
 │   ├── i18n                            # 语言包配置
 │   ├── components                      # 公共组件
 │   ├── plugins                         # vite插件
-|   ├── theme                           # vitepress自定义主题，引入wei-design的组件及一些自定义主题组件
+|   ├── theme                           # vitepress自定义主题，引入we-design的组件及一些自定义主题组件
 │   ├── util                            # 工具方法(util.js)
 │   ├── vitepress                       # 自定义组件及主题
 │   ├── config.ts                       # vitepress配置
@@ -78,7 +78,7 @@ echo '# Hello Vue3' > index.md
 
 ```json
 {
-    "name": "@wei-design/docs",
+    "name": "@we-design/docs",
     "private": false,
     "scripts": {
         "docs:dev": "vitepress dev .",

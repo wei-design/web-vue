@@ -15,17 +15,17 @@ main.js中
 import { createApp } from 'vue';
 import App from './App.vue';
 // 完整引入组件库
-import WeiDesign from 'wei-design';
+import WeDesign from 'we-design';
 
 const app = createApp(App);
 
-app.use(WeiDesign).mount('#app');
+app.use(WeDesign).mount('#app');
 ```
 
 组件当中
 
 ```vue
-<WeiButton :loading="true">按钮组件</WeiButton>
+<WeButton :loading="true">按钮组件</WeButton>
 ```
 
 ### 按需引入
@@ -36,15 +36,15 @@ main.js中
 import { createApp } from 'vue';
 import App from './App.vue';
 // 按需引入
-import { WeiButton } from 'wei-design';
+import { Button } from 'we-design';
 
 const app = createApp(App);
 
-app.use(WeiButton).mount('#app');
+app.use(Button).mount('#app');
 ```
 
 组件当中
 
 ```vue
-<WeiButton :loading="true">按钮组件</WeiButton>
+<WeButton :loading="true">按钮组件</WeButton>
 ```

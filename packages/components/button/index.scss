@@ -12,7 +12,7 @@ $xsloading: 1px 4px;
 $smloading: 2px 5px;
 $mdloading: 3px 6px;
 $lgloading: 4px 8px;
-.wei-button {
+.we-button {
     padding: $md;
     overflow: hidden;
     border-radius: 6px;
@@ -29,7 +29,7 @@ $lgloading: 4px 8px;
     transition: all 0.1s linear;
     box-sizing: border-box;
 }
-@mixin wei-button-colors($color, $type) {
+@mixin we-button-colors($color, $type) {
     background: $color;
     color: $color;
     @if $type== "default" {
@@ -70,93 +70,93 @@ $lgloading: 4px 8px;
     }
 }
 
-.wei-button-type-default {
-    @include wei-button-colors($primaryColor, "default");
+.we-button-type-default {
+    @include we-button-colors($primaryColor, "default");
 }
 
-.wei-button-type-primary {
-    @include wei-button-colors($primaryColor, "primary");
+.we-button-type-primary {
+    @include we-button-colors($primaryColor, "primary");
     border: none;
     color: $white !important;
 }
 
-.wei-button-type-link {
-    @include wei-button-colors($primaryColor, "link");
+.we-button-type-link {
+    @include we-button-colors($primaryColor, "link");
 }
 
-.wei-button-type-ghost {
-    @include wei-button-colors($primaryColor, "ghost");
+.we-button-type-ghost {
+    @include we-button-colors($primaryColor, "ghost");
 }
 
-.wei-button-type-delicate {
-    @include wei-button-colors($delicateColor, "delicate");
+.we-button-type-delicate {
+    @include we-button-colors($delicateColor, "delicate");
 }
 
-.wei-button-type-default.wei-button-status-success {
-    @include wei-button-colors($successColor, "default");
+.we-button-type-default.we-button-status-success {
+    @include we-button-colors($successColor, "default");
 }
 
-.wei-button-type-default.wei-button-status-info {
-    @include wei-button-colors($infoColor, "default");
+.we-button-type-default.we-button-status-info {
+    @include we-button-colors($infoColor, "default");
 }
 
-.wei-button-type-default.wei-button-status-warning {
-    @include wei-button-colors($warningColor, "default");
+.we-button-type-default.we-button-status-warning {
+    @include we-button-colors($warningColor, "default");
 }
 
-.wei-button-type-default.wei-button-status-danger {
-    @include wei-button-colors($dangerColor, "default");
+.we-button-type-default.we-button-status-danger {
+    @include we-button-colors($dangerColor, "default");
 }
 
-.wei-button-type-primary.wei-button-status-success {
-    @include wei-button-colors($successColor, "primary");
+.we-button-type-primary.we-button-status-success {
+    @include we-button-colors($successColor, "primary");
 }
 
-.wei-button-type-primary.wei-button-status-info {
-    @include wei-button-colors($infoColor, "primary");
+.we-button-type-primary.we-button-status-info {
+    @include we-button-colors($infoColor, "primary");
 }
 
-.wei-button-type-primary.wei-button-status-warning {
-    @include wei-button-colors($warningColor, "primary");
+.we-button-type-primary.we-button-status-warning {
+    @include we-button-colors($warningColor, "primary");
 }
 
-.wei-button-type-primary.wei-button-status-danger {
-    @include wei-button-colors($dangerColor, "primary");
+.we-button-type-primary.we-button-status-danger {
+    @include we-button-colors($dangerColor, "primary");
 }
 
-.wei-button-type-link.wei-button-status-success {
-    @include wei-button-colors($successColor, "link");
+.we-button-type-link.we-button-status-success {
+    @include we-button-colors($successColor, "link");
 }
 
-.wei-button-type-link.wei-button-status-info {
-    @include wei-button-colors($infoColor, "link");
+.we-button-type-link.we-button-status-info {
+    @include we-button-colors($infoColor, "link");
 }
 
-.wei-button-type-link.wei-button-status-warning {
-    @include wei-button-colors($warningColor, "link");
+.we-button-type-link.we-button-status-warning {
+    @include we-button-colors($warningColor, "link");
 }
 
-.wei-button-type-link.wei-button-status-danger {
-    @include wei-button-colors($dangerColor, "link");
+.we-button-type-link.we-button-status-danger {
+    @include we-button-colors($dangerColor, "link");
 }
 
-.wei-button-type-ghost.wei-button-status-success {
-    @include wei-button-colors($successColor, "ghost");
+.we-button-type-ghost.we-button-status-success {
+    @include we-button-colors($successColor, "ghost");
 }
 
-.wei-button-type-ghost.wei-button-status-info {
-    @include wei-button-colors($infoColor, "ghost");
+.we-button-type-ghost.we-button-status-info {
+    @include we-button-colors($infoColor, "ghost");
 }
 
-.wei-button-type-ghost.wei-button-status-warning {
-    @include wei-button-colors($warningColor, "ghost");
+.we-button-type-ghost.we-button-status-warning {
+    @include we-button-colors($warningColor, "ghost");
 }
 
-.wei-button-type-ghost.wei-button-status-danger {
-    @include wei-button-colors($dangerColor, "ghost");
+.we-button-type-ghost.we-button-status-danger {
+    @include we-button-colors($dangerColor, "ghost");
 }
 
-.wei-button-disabled {
+.we-button-disabled {
     background-color: #f7f7fa;
     cursor: not-allowed;
 
@@ -167,62 +167,62 @@ $lgloading: 4px 8px;
     }
 }
 
-.wei-button-shape-square {
+.we-button-shape-square {
     border-radius: 6px;
 }
 
-.wei-button-shape-circle {
+.we-button-shape-circle {
     border-radius: 50%;
     padding: 0;
 }
 
-.wei-button-shape-round {
+.we-button-shape-round {
     border-radius: 18px;
 }
 
-.wei-button-size-lg {
+.we-button-size-lg {
     padding: $lg;
     font-size: 16px;
 }
 
-.wei-button-size-lg.wei-button-loading {
+.we-button-size-lg.we-button-loading {
     padding: $lgloading;
     font-size: 16px;
 }
 
-.wei-button-size-md {
+.we-button-size-md {
     padding: $md;
     font-size: 14px;
 }
 
-.wei-button-size-md.wei-button-loading {
+.we-button-size-md.we-button-loading {
     padding: $mdloading;
     pointer-events: none;
     font-size: 14px;
 }
 
-.wei-button-size-sm {
+.we-button-size-sm {
     padding: $sm;
     font-size: 14px;
 }
 
-.wei-button-size-sm.wei-button-loading {
+.we-button-size-sm.we-button-loading {
     padding: $smloading;
     pointer-events: none;
     font-size: 14px;
 }
 
-.wei-button-size-xs {
+.we-button-size-xs {
     padding: $xs;
     font-size: 12px;
 }
 
-.wei-button-size-xs.wei-button-loading {
+.we-button-size-xs.we-button-loading {
     padding: $xsloading;
     pointer-events: none;
     font-size: 14px;
 }
 
-.wei-button-slot {
+.we-button-slot {
     text-align: center;
 }

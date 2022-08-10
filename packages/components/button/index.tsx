@@ -22,21 +22,21 @@ const ButtonProps = {
 };
 
 const Button = defineComponent({
-    name: 'WeiButton',
+    name: 'WeButton',
     props: ButtonProps,
     setup(props, { slots }: SetupContext) {
         const classString = classNames([
-            'wei-button',
-            `wei-button-type-${props.type}`,
-            props.disabled ? 'wei-button-disabled' : '',
+            'we-button',
+            `we-button-type-${props.type}`,
+            props.disabled ? 'we-button-disabled' : '',
         ]);
         return () => (
             <button
                 class={classString}
                 disabled={props.disabled || props.loading}
             >
-                <div class="wei-button-inner">
-                    <span class="wei-button-slot">
+                <div class="we-button-inner">
+                    <span class="we-button-slot">
                         {slots.default && slots.default()}
                     </span>
                 </div>

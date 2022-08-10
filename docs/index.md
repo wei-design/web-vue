@@ -3,7 +3,7 @@ layout: home
 editLink: false
 
 hero:
-  name: Wei Design
+  name: We Design
   tagline: A Vue 3 UI Framework
   actions:
     - theme: brand
@@ -11,7 +11,7 @@ hero:
       link: /zh-CN/guide/installation
     - theme: alt
       text: GitHub
-      link: https://github.com/wforguo/wei-design
+      link: https://github.com/wforguo/we-design
       
 features:
   - title: 📦 Vite

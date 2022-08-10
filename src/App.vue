@@ -1,9 +1,9 @@
 <template>
-    <h2>wei-design</h2>
+    <h2>we-design</h2>
     <hr style="margin: 32px 100px" />
-    <img src="/favicon.png" alt="wei-design" title="wei-design" />
+    <img src="/favicon.png" alt="we-design" title="we-design" />
     <div>
-        <WeiButton :loading="true">按钮组件</WeiButton>
+        <WeButton :loading="true">按钮组件</WeButton>
     </div>
 </template>
 
