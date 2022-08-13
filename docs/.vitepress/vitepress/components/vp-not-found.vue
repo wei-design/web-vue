@@ -8,7 +8,7 @@
     <div class="vp-page not-found">
         <h3 style="margin-bottom: 24px">{{ locale.title }}</h3>
         <p style="margin-bottom: 32px">{{ locale.desc }}</p>
-        <wei-button @click="goHome">{{ locale['button-title'] }}</wei-button>
+        <we-button @click="goHome">{{ locale['button-title'] }}</we-button>
     </div>
 </template>
 

@@ -21,4 +21,4 @@ export const vpRoot = resolve(docRoot, '.vitepress')
 export const REPO_BRANCH = 'master';
 
 // 仓库地址
-export const REPO_PATH = 'wforguo/wei-design';
+export const REPO_PATH = 'wforguo/we-design';

@@ -1,8 +1,8 @@
 /**
  * 导出所有组件
  */
-import WeiButton from './components/button';
+import Button from './components/button';
 
-export default [WeiButton];
+export default [Button];
 
-export { WeiButton };
+export { Button };

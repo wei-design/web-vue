@@ -1,11 +1,11 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 // 完整引入组件库
-import WeiDesign from '../packages';
+import WeDesign from '../packages/index';
 
 const app = createApp(App);
 
-console.log('import.meta.env', import.meta.env);
+console.log('import.meta.env', import.meta.env)
 // 版本及打包日期
 console.log(
     `%c Version %c ${process.env.APP_VERSION}`,
@@ -18,4 +18,4 @@ console.log(
     'padding: 1px 5px 1px 1px; border-radius: 0 3px 3px 0; color: #fff; background: #1475b2'
 );
 
-app.use(WeiDesign).mount('#app');
+app.use(WeDesign).mount('#app');

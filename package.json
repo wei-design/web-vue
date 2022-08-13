@@ -1,15 +1,15 @@
 {
-    "name": "wei-design",
+    "name": "@we-design/web-vue",
     "private": false,
-    "version": "1.0.1",
+    "version": "1.0.0",
     "author": "wforguo@qq.com",
     "license": "ISC",
     "keywords": [
-        "wei-design",
+        "we-design",
         "vue",
         "vue3",
         "Vue.js 3 UI library",
-        "Wei Design - A Vue.js 3 UI library",
+        "We Design - A Vue.js 3 UI library",
         "javascript",
         "npm"
     ],
@@ -17,12 +17,12 @@
         "lib/*",
         "packages/*"
     ],
-    "main": "./lib/wei-design.umd.js",
-    "module": "./lib/wei-design.es.js",
+    "main": "./lib/we-design.umd.js",
+    "module": "./lib/we-design.es.js",
     "exports": {
         ".": {
-            "import": "./lib/wei-design.es.js",
-            "require": "./lib/wei-design.umd.js"
+            "import": "./lib/we-design.es.js",
+            "require": "./lib/we-design.umd.js"
         }
     },
     "scripts": {
@@ -43,10 +43,10 @@
         "release:minor": "npm run release -- --release-as minor",
         "release:patch": "npm run release -- --release-as patch"
     },
-    "homepage": "https://github.com/wforguo/wei-design.git",
+    "homepage": "https://github.com/wforguo/we-design.git",
     "repository": {
         "type": "git",
-        "url": "https://github.com/wforguo/wei-design.git"
+        "url": "https://github.com/wforguo/we-design.git"
     },
     "dependencies": {
         "dayjs": "^1.11.4",

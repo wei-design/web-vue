@@ -4,7 +4,7 @@
  * @Description: 主题配置
  */
 import DefaultTheme from 'vitepress/theme'
-import WeiDesign from '../../../packages'
+import WeDesign from '@we-design/web-vue'
 import VPApp, {NotFound, VPDemo} from '../vitepress';
 
 export default ({
@@ -13,7 +13,7 @@ export default ({
     NotFound, // 自定义【404】
     enhanceApp: ({app}: any) => {
         // 注册全局组件
-        app.use(WeiDesign);
+        app.use(WeDesign);
         app.component('Demo', VPDemo);
     }
 })

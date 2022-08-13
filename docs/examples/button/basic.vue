@@ -1,8 +1,8 @@
 <template>
     <div class="button-basic">
-        <wei-button>Default</wei-button>
-        <wei-button type="primary">Primary</wei-button>
-        <wei-button @click="handleClick">点击</wei-button>
+        <we-button>Default</we-button>
+        <we-button type="primary">Primary</we-button>
+        <we-button @click="handleClick">点击</we-button>
     </div>
 </template>
 
@@ -13,7 +13,7 @@ const handleClick = () => {
 </script>
 
 <style scoped>
-.wei-button {
+.we-button {
     margin-right: 12px;
 }
 </style>
