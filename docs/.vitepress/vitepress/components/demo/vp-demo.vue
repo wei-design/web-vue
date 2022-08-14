@@ -1,9 +1,27 @@
+<template>
+    <ClientOnly>
+        <!-- danger here DO NOT USE INLINE SCRIPT TAG -->
+        <div v-html="decodedDescription"/>
+
+        <div class="example">
+            <vp-example :path="path" />
+            <vp-source v-show="sourceVisible" :source="source"/>
+            <div
+                class="example-float-control"
+                @click="toggleSourceVisible(!sourceVisible)"
+            >
+                <span>{{ sourceVisible ? '隐藏源码' : '显示源码' }}</span>
+            </div>
+        </div>
+    </ClientOnly>
+</template>
+
 <script lang="ts" setup>
 import {computed, getCurrentInstance, ref} from 'vue'
 import {useClipboard, useToggle} from '@vueuse/core'
 
-import Example from './vp-example.vue'
-import SourceCode from './vp-source-code.vue'
+import VpExample from './vp-example.vue'
+import VpSource from './vp-source-code.vue'
 
 const props = defineProps<{
     source: string
@@ -18,25 +36,6 @@ const decodedDescription = computed(() =>
     decodeURIComponent(props.description!)
 )
 </script>
-
-<template>
-    <ClientOnly>
-        <!-- danger here DO NOT USE INLINE SCRIPT TAG -->
-        <div v-html="decodedDescription"/>
-
-        <div class="example">
-            <Example :path="path" />
-            <SourceCode v-show="sourceVisible" :source="source"/>
-            <div
-                class="example-float-control"
-                @click="toggleSourceVisible(!sourceVisible)"
-            >
-                <span>{{ sourceVisible ? '隐藏源码' : '显示源码' }}</span>
-            </div>
-        </div>
-    </ClientOnly>
-</template>
-
 <style lang="scss" scoped>
 .example {
     border: 1px solid var(--border-color);

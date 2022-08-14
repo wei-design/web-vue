@@ -5,7 +5,7 @@ import WeDesign from '../packages/index';
 
 const app = createApp(App);
 
-console.log('import.meta.env', import.meta.env)
+console.log('import.meta.env', import.meta.env);
 // 版本及打包日期
 console.log(
     `%c Version %c ${process.env.APP_VERSION}`,

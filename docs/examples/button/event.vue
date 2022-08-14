@@ -1,7 +1,6 @@
 <template>
     <div class="button-basic">
-        <we-button>Default</we-button>
-        <we-button type="primary">Primary</we-button>
+        <we-button @click="handleClick">点击</we-button>
     </div>
 </template>
 

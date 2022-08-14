@@ -1,10 +1,9 @@
 import { defineComponent, App, PropType, SetupContext } from 'vue';
 import classNames from '../../utils/className';
 import './index.scss';
-
 const ButtonProps = {
     type: {
-        type: String as PropType<string>,
+        type: String as PropType<string>, // 转为ts类型string
         default: 'default',
     },
     size: {

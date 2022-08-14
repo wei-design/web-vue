@@ -1,24 +1,3 @@
-<script lang="ts" setup>
-import {onBeforeMount, shallowRef} from "vue";
-const props = defineProps<{
-    source?: string
-    path?: string
-}>()
-
-// 创建一个跟踪自身 .value 变化的 ref，但不会使其值也变成响应式的。
-let dynamicComponent = shallowRef(null);
-
-onBeforeMount(() => {
-    // 动态加载示列组件
-    const dynamicPath = `../../../../examples/${props.path}.vue`
-    /* @vite-ignore */
-    import(dynamicPath).then((module) => {
-        dynamicComponent.value = module.default
-    })
-})
-
-</script>
-
 <template>
     <ClientOnly>
         <div class="example-component">
@@ -31,6 +10,30 @@ onBeforeMount(() => {
         </div>
     </ClientOnly>
 </template>
+
+<script lang="ts" setup>
+import {onBeforeMount, shallowRef} from "vue";
+const props = defineProps<{
+    path?: string
+}>()
+
+
+// 创建一个跟踪自身 .value 变化的 ref，但不会使其值也变成响应式的。
+let dynamicComponent = shallowRef(null);
+
+onBeforeMount(() => {
+    const modules = import.meta.globEager(`../../../../examples/*/*.vue`)
+    // 动态加载示列组件
+    const [_, demoName] = props.path.split('/')
+    for (const modulesKey in modules) {
+        const module = (modules[modulesKey])
+        if (modulesKey.split('.vue')[0].endsWith(demoName)) {
+            dynamicComponent.value = module.default
+        }
+    }
+})
+
+</script>
 
 <style lang="scss" scoped>
 .example-component {
