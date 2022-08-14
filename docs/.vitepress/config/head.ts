@@ -9,7 +9,7 @@ export const head: HeadConfig[] = [
         'link',
         {
             rel: 'icon',
-            href: 'images/logo-link.png',
+            href: '//wforguo.github.io/we-design/images/logo-link.png',
             type: 'image',
         },
     ],
