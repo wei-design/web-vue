@@ -24,7 +24,6 @@
     "dependencies": {
         "@vue/shared": "^3.2.33",
         "@vueuse/core": "^8.5.0",
-        "@we-design/web-vue": "workspace:^1.0.0",
         "axios": "^0.27.2",
         "clipboard-copy": "^4.0.1",
         "markdown-it": "^13.0.1",

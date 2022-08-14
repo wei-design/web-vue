@@ -3,11 +3,11 @@
         <!-- danger here DO NOT USE INLINE SCRIPT TAG -->
         <div v-html="decodedDescription"/>
 
-        <div class="example">
+        <div class="vp-demo">
             <vp-example :path="path" />
             <vp-source v-show="sourceVisible" :source="source"/>
             <div
-                class="example-float-control"
+                class="vp-demo__control"
                 @click="toggleSourceVisible(!sourceVisible)"
             >
                 <span>{{ sourceVisible ? '隐藏源码' : '显示源码' }}</span>
@@ -37,11 +37,8 @@ const decodedDescription = computed(() =>
 )
 </script>
 <style lang="scss" scoped>
-.example {
-    border: 1px solid var(--border-color);
-    border-radius: var(--el-border-radius-base);
-
-    &-float-control {
+.vp-demo {
+    &__control {
         display: flex;
         align-items: center;
         justify-content: center;

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {computed, onBeforeMount} from 'vue'
+import {computed} from 'vue'
 const props = defineProps({
     source: {
         type: String,
