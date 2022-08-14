@@ -76,6 +76,7 @@ importers:
       clipboard-copy: ^4.0.1
       consola: ^2.15.3
       cross-env: ^7.0.3
+      dayjs: ^1.11.4
       escape-html: ^1.0.3
       fast-glob: ^3.2.11
       markdown-it: ^13.0.1
@@ -100,6 +101,7 @@ importers:
       '@vueuse/core': registry.npmmirror.com/@vueuse/core/8.9.4_vue@3.2.33
       axios: registry.npmmirror.com/axios/0.27.2
       clipboard-copy: registry.npmmirror.com/clipboard-copy/4.0.1
+      dayjs: 1.11.4
       markdown-it: registry.npmmirror.com/markdown-it/13.0.1
       normalize.css: registry.npmmirror.com/normalize.css/8.0.1
       nprogress: registry.npmmirror.com/nprogress/0.2.0
@@ -7954,7 +7956,7 @@ packages:
       normalize-path: registry.npmmirror.com/normalize-path/3.0.0
       readdirp: registry.npmmirror.com/readdirp/3.6.0
     optionalDependencies:
-      fsevents: registry.npmmirror.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   registry.npmmirror.com/clipboard-copy/4.0.1:
@@ -9149,7 +9151,7 @@ packages:
     dependencies:
       universalify: registry.npmmirror.com/universalify/2.0.0
     optionalDependencies:
-      graceful-fs: registry.npmmirror.com/graceful-fs/4.2.10
+      graceful-fs: 4.2.10
     dev: true
 
   registry.npmmirror.com/jsonpointer/5.0.1:
@@ -9736,7 +9738,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: registry.npmmirror.com/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   registry.npmmirror.com/run-parallel/1.2.0:
