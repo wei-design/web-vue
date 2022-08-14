@@ -8,26 +8,19 @@
     </div>
 </template>
 <script lang="ts">
-import { defineComponent, PropType, reactive } from 'vue';
-const Props = {
-    name: {
-        type: String as PropType<string>,
-    },
-};
+import { defineComponent, reactive } from 'vue'
 export default defineComponent({
-    name: 'Demo',
-    props: Props,
-    setup: (props, { slots, attrs, emit }) => {
-        console.log(props);
+    name: 'WeDemo',
+    setup: () => {
         const state = reactive({
-            value: 0,
-        });
+            value: 0
+        })
         setInterval(() => {
-            state.value += 1;
-        }, 1000);
+            state.value += 1
+        }, 1000)
         return {
-            state,
-        };
-    },
-});
+            state
+        }
+    }
+})
 </script>

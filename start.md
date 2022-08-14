@@ -127,23 +127,11 @@ export default defineConfig({
 
 ### 规范
 
-- commit规范
-- eslint
+建议提前配置好，开发体验会更好
 
-- 建议提前配置好，开发体验会更好
+- [commit规范](https://www.yuque.com/forguo/f2e/elkm1q)
 
-- husky配置
-
-```json
-{
-    "scripts": {
-        "prepare": "husky install"
-    }
-}
-```
-prepare
-
-`npm install` 之后自动执行
+- [eslint + prettier](https://juejin.cn/post/7011871773687808031)
 
 ## 文档搭建
 

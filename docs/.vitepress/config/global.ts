@@ -3,7 +3,7 @@
  * @Date: 2022/7/9 10:22
  * @Description: 基础配置
  */
-import { resolve } from "path";
+import { resolve } from "path"
 
 // 项目目录
 export const projRoot = resolve(__dirname, '..', '..', '..')

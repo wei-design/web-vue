@@ -1,28 +1,28 @@
-import { isArray, isString, isObject } from './util';
+import { isArray, isString, isObject } from './util'
 
 function className(...args: any[]) {
-    const classes = [];
+    const classes = []
     for (let i = 0; i < args.length; i++) {
-        const value = args[i];
-        if (!value) continue;
+        const value = args[i]
+        if (!value) continue
         if (isString(value)) {
-            classes.push(value);
+            classes.push(value)
         } else if (isArray(value)) {
             for (let i = 0; i < value.length; i++) {
-                const inner: any = className(value[i]);
+                const inner: any = className(value[i])
                 if (inner) {
-                    classes.push(inner);
+                    classes.push(inner)
                 }
             }
         } else if (isObject(value)) {
             for (const name in value) {
                 if (value[name]) {
-                    classes.push(name);
+                    classes.push(name)
                 }
             }
         }
     }
-    return classes.join(' ');
+    return classes.join(' ')
 }
 
-export default className;
+export default className

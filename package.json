@@ -36,6 +36,8 @@
         "clean:lib": "rimraf lib",
         "clean:modules": "rimraf node_modules",
         "prepare": "husky install",
+        "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --fix src",
+        "format": "prettier .  --write",
         "release": "standard-version",
         "release:alpha": "standard-version --prerelease alpha",
         "release:rc": "standard-version --prerelease rc",

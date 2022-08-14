@@ -1,4 +1,4 @@
-name: Deploy
+name: DocDeploy
 # 触发构建动作
 #    push:
 #        # 触发构建分支[默认分支]

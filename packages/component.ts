@@ -1,8 +1,8 @@
 /**
  * 导出所有组件
  */
-import Button from './components/button';
+import Button from './components/button'
 
-export default [Button];
+export default [Button]
 
-export { Button };
+export { Button }

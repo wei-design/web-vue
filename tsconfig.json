@@ -26,5 +26,9 @@
         {
             "path": "./tsconfig.node.json"
         }
-    ]
+    ],
+    "paths": {
+        "@/*":["./src/*"],
+        "@/packages/*":["./src/packages/*"]
+    }
 }

@@ -1,24 +1,26 @@
-import { defineComponent, App, PropType, SetupContext } from 'vue';
-import classNames from '../../utils/className';
-import './index.scss';
+import { defineComponent, App, PropType, SetupContext } from 'vue'
+import classNames from '../../utils/className'
+import './index.scss'
+
 const ButtonProps = {
     type: {
         type: String as PropType<string>, // 转为ts类型string
-        default: 'default',
+        default: 'default'
     },
     size: {
         type: String as PropType<string>,
-        default: 'md',
+        default: 'md'
     },
     disabled: {
         type: Boolean as PropType<boolean>,
-        default: false,
+        default: false
     },
     loading: {
         type: Boolean as PropType<boolean>,
-        default: false,
-    },
-};
+
+        default: false
+    }
+}
 
 const Button = defineComponent({
     name: 'WeButton',
@@ -27,27 +29,22 @@ const Button = defineComponent({
         const classString = classNames([
             'we-button',
             `we-button-type-${props.type}`,
-            props.disabled ? 'we-button-disabled' : '',
-        ]);
+            props.disabled ? 'we-button-disabled' : ''
+        ])
         return () => (
-            <button
-                class={classString}
-                disabled={props.disabled || props.loading}
-            >
-                <div class="we-button-inner">
-                    <span class="we-button-slot">
-                        {slots.default && slots.default()}
-                    </span>
+            <button class={classString} disabled={props.disabled || props.loading}>
+                <div class='we-button-inner'>
+                    <span class='we-button-slot'>{slots.default && slots.default()}</span>
                 </div>
             </button>
-        );
-    },
-});
+        )
+    }
+})
 
 Button.install = function (app: App) {
     // 组件注册，按需引入
-    app.component(Button.name, Button);
-    return app;
-};
+    app.component(Button.name, Button)
+    return app
+}
 
-export default Button;
+export default Button
