@@ -6,7 +6,6 @@ import DefineOptions from 'unplugin-vue-define-options/vite'
 import UnoCSS from 'unocss/vite'
 import dayjs from 'dayjs';
 import pkg from '../package.json';
-import { resolve } from "path";
 const { version: APP_VERSION } = pkg;
 
 export default defineConfig(async (configEnv) => {
@@ -20,12 +19,6 @@ export default defineConfig(async (configEnv) => {
             open: true,
             port: 5001,
             host: true,
-        },
-        resolve: {
-            alias: {
-                '@': resolve(__dirname, '../src'),
-                '@/packages': resolve(__dirname, '../packages')
-            }
         },
         define: {
             'process.env': JSON.stringify(env)

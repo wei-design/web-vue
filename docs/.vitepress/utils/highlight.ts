@@ -3,74 +3,10 @@
  * @Date: 2022/7/9 11:06
  * @Description: 代码高亮
  */
-// ref https://github.com/vuejs/vitepress/blob/main/src/node/markdown/plugins/highlight.ts
-import chalk from 'chalk'
+// import escapeHtml from 'escape-html'
 // @ts-ignore
-import escapeHtml from 'escape-html'
-// @ts-ignore
-import prism from 'prismjs'
-import consola from 'consola'
 import { IThemeRegistration, getHighlighter, HtmlRendererOptions } from 'shiki'
 
-// prism is listed as actual dep so it's ok to require
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const loadLanguages = require('prismjs/components/index')
-
-// required to make embedded highlighting work...
-loadLanguages(['markup', 'css', 'javascript'])
-
-function wrap(code: string, lang: string): string {
-    if (lang === 'text') {
-        code = escapeHtml(code)
-    }
-    return `<pre v-pre><code>${code}</code></pre>`
-}
-
-export const highlight = (str: string, lang: string) => {
-    if (!lang) {
-        return wrap(str, 'text')
-    }
-    lang = lang.toLowerCase()
-    const rawLang = lang
-    if (lang === 'vue' || lang === 'html') {
-        lang = 'markup'
-    }
-    if (lang === 'md') {
-        lang = 'markdown'
-    }
-    if (lang === 'ts') {
-        lang = 'typescript'
-    }
-    if (lang === 'py') {
-        lang = 'python'
-    }
-    if (!prism.languages[lang]) {
-        try {
-            loadLanguages([lang])
-        } catch {
-            // eslint-disable-next-line no-console
-            consola.warn(
-                chalk.yellow(
-                    `[vitepress] Syntax highlight for language "${lang}" is not supported.`
-                )
-            )
-        }
-    }
-    if (prism.languages[lang]) {
-        const code = prism.highlight(str, prism.languages[lang], lang)
-        return wrap(code, rawLang)
-    }
-    return wrap(str, 'text')
-}
-
-/**
- * 2 steps:
- *
- * 1. convert attrs into line numbers:
- *    {4,7-13,16,23-27,40} -> [4,7,8,9,10,11,12,13,16,23,24,25,26,27,40]
- * 2. convert line numbers into line options:
- *    [{ line: number, classes: string[] }]
- */
 const attrsToLines = (attrs: string): HtmlRendererOptions['lineOptions'] => {
     const result: number[] = []
     if (!attrs.trim()) {
@@ -98,8 +34,9 @@ export type ThemeOptions =
     | IThemeRegistration
     | { light: IThemeRegistration; dark: IThemeRegistration }
 
-export async function highlight1(
-    theme: ThemeOptions = 'material-palenight'
+// Shiki can load any VS Code themes. Just change this line:
+export async function highlight(
+    theme: ThemeOptions = 'material-palenight' // 默认主题
 ): Promise<(str: string, lang: string, attrs: string) => string> {
     const hasSingleTheme = typeof theme === 'string' || 'name' in theme
     const getThemeName = (themeValue: IThemeRegistration) =>
@@ -112,6 +49,7 @@ export async function highlight1(
     const vueRE = /-vue$/
 
     return (str: string, lang: string, attrs: string) => {
+        console.log(str)
         const vPre = vueRE.test(lang) ? '' : 'v-pre'
         lang = lang.replace(vueRE, '').toLowerCase()
 

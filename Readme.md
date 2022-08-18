@@ -1,10 +1,10 @@
-# We-Design
+# Web-Design
 
 A Vue.js 3 UI library
 
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli)
 
-[![WeDesign version badge](https://img.shields.io/npm/v/we-design.svg?style=flat-square)](https://www.npmjs.org/package/we-design)
+[![WeDesign version badge](https://img.shields.io/npm/v/@web-design/web-vue.svg?style=flat-square)](https://www.npmjs.org/package/@web-design/web-vue)
 
 ---
 
@@ -25,7 +25,7 @@ A Vue.js 3 UI library
 推荐使用npm
 
 ```bash
-pnpm install we-design --save
+pnpm install @web-design/web-vue --save
 ```
 
 ### 全局使用
@@ -36,7 +36,7 @@ pnpm install we-design --save
 import { createApp } from 'vue';
 import App from './App.vue';
 // 完整引入组件库
-import WeDesign from 'we-design';
+import WeDesign from '@web-design/web-vue';
 
 const app = createApp(App);
 // 全局安装

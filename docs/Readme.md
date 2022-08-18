@@ -177,7 +177,6 @@ const nav = [
 ### 增加源码预览
 
 
-
 ### 自定义主题
 
 toDo：...
@@ -191,7 +190,7 @@ toDo：...
 结合：GitHub Actions完成自动化部署
 
 ```yaml
-name: Deploy
+name: Publish Docs Deploy
 # 触发构建动作
 #    push:
 #        # 触发构建分支[默认分支]
@@ -217,17 +216,23 @@ jobs:
             # 检出推送的代码
             - name: Checkout - 检出代码
               uses: actions/checkout@v2
+
+            # 使用pnpm
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v2
+
             # Node版本
             - name: Setup Node.js v16
               uses: actions/setup-node@v3
               with:
                   node-version: 16
-                  cache: yarn
+                  cache: pnpm
+
             - name: Install NodeModules - 安装依赖
-              run: cd docs && yarn install # 安装依赖
+              run: cd docs && pnpm install # 安装依赖
 
             - name: Build - 打包
-              run: yarn docs:build # 打包
+              run: pnpm run docs:build # 打包
 
             - name: Dir - 打包结果
               run: cd docs/.vitepress/dist && ls -ll # 打包结果
@@ -237,4 +242,5 @@ jobs:
               with:
                   github_token: ${{ secrets.CL_TOKEN }} # github_token，仓库secrets配置
                   publish_dir: docs/.vitepress/dist  # 部署打包后的 dist 目录
+
 ```

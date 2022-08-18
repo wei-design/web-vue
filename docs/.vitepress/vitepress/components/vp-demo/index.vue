@@ -4,8 +4,8 @@
         <div v-html="decodedDescription"/>
 
         <div class="vp-demo">
-            <vp-example :path="path" />
-            <vp-source v-show="sourceVisible" :source="source"/>
+            <vp-demo-view :path="path" />
+            <vp-demo-source v-show="sourceVisible" :source="source"/>
             <div
                 class="vp-demo__control"
                 @click="toggleSourceVisible(!sourceVisible)"
@@ -20,13 +20,12 @@
 import {computed, getCurrentInstance, ref} from 'vue'
 import {useClipboard, useToggle} from '@vueuse/core'
 
-import VpExample from './vp-example.vue'
-import VpSource from './vp-source-code.vue'
+import VpDemoView from './vp-demo-view.vue'
+import VpDemoSource from './vp-demo-source.vue'
 
 const props = defineProps<{
     source: string
     path: string
-    rawSource: string
     description?: string
 }>()
 
