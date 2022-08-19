@@ -23,7 +23,7 @@ jobs:
         steps:
             # 检出推送的代码
             - name: Checkout - 检出代码
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             # 使用pnpm
             - name: Setup pnpm
@@ -34,7 +34,7 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 16
-                  cache: pnpm
+                  cache: 'pnpm'
 
             - name: Install NodeModules - 安装依赖
               run: cd docs && pnpm install # 安装依赖
