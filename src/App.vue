@@ -1,7 +1,7 @@
 <template>
-    <h2>we-design</h2>
+    <h2>web-design</h2>
     <hr style="margin: 32px 100px" />
-    <img src="/favicon.png" alt="we-design" title="we-design" />
+    <img src="/favicon.png" alt="web-design" title="web-design" />
     <div>
         <WeButton :loading="true">按钮组件</WeButton>
     </div>

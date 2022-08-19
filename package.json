@@ -34,10 +34,10 @@
         "release:minor": "npm run release -- --release-as minor",
         "release:patch": "npm run release -- --release-as patch"
     },
-    "homepage": "https://github.com/wforguo/we-design.git",
+    "homepage": "https://github.com/wei-design/web-vue.git",
     "repository": {
         "type": "git",
-        "url": "https://github.com/wforguo/we-design.git"
+        "url": "https://github.com/wei-design/web-vue.git"
     },
     "files": [
         "lib/*",
@@ -45,12 +45,12 @@
         "Readme.md",
         "package.json"
     ],
-    "main": "./lib/we-design.umd.js",
-    "module": "./lib/we-design.es.js",
+    "main": "./lib/web-design.umd.js",
+    "module": "./lib/web-design.es.js",
     "exports": {
         ".": {
-            "import": "./lib/we-design.es.js",
-            "require": "./lib/we-design.umd.js"
+            "import": "./lib/web-design.es.js",
+            "require": "./lib/web-design.umd.js"
         }
     },
     "dependencies": {

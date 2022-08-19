@@ -5,20 +5,18 @@ lang: zh-CN
 
 # 快速开始
 
-## 引入
-
 ### 全局引入
 
-main.js中
+在`main.js`中
 
 ```js
 import { createApp } from 'vue';
 import App from './App.vue';
 // 完整引入组件库
-import WeDesign from 'we-design';
+import WeDesign from '@web-design/web-vue';
 
 const app = createApp(App);
-
+// 全局安装
 app.use(WeDesign).mount('#app');
 ```
 
@@ -30,13 +28,13 @@ app.use(WeDesign).mount('#app');
 
 ### 按需引入
 
-main.js中
+`main.js`中
 
 ```js
 import { createApp } from 'vue';
 import App from './App.vue';
 // 按需引入
-import { Button } from 'we-design';
+import { Button } from '@web-design/web-vue';
 
 const app = createApp(App);
 

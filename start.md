@@ -1,10 +1,10 @@
-# We-Design
+# @web-design/web-vue
 
 A Vue.js 3 UI library
 
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli)
 
-[![WeDesign version badge](https://img.shields.io/npm/v/we-design.svg?style=flat-square)](https://www.npmjs.org/package/we-design)
+[![WeDesign version badge](https://img.shields.io/npm/v/@web-design/web-vue.svg?style=flat-square)](https://www.npmjs.org/package/@web-design/web-vue)
 
 ---
 
@@ -177,8 +177,8 @@ npm run -C docs build
 
 ```js
 {
-    //  we-design【组织】，web-vue【包名】
-    "name": "@we-design/web-vue",
+    //  web-design【组织】，web-vue【包名】
+    "name": "@web-design/web-vue",
 }
 ```
 

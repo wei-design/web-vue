@@ -11,7 +11,7 @@ hero:
       link: /zh-CN/guide/installation
     - theme: alt
       text: GitHub
-      link: https://github.com/wforguo/we-design
+      link: https://github.com/wei-design/web-vue
       
 features:
   - title: 📦 Vite

@@ -21,8 +21,8 @@ export const head: HeadConfig[] = [
         },
     ],
     ['meta', {rel: 'referrer', href: `same-origin`}],
-    ['meta', {name: 'keywords', content: `we-design,A Vue.js 3 UI library,vue,vue3`}],
-    ['meta', {name: 'description', content: `we-design|A Vue.js 3 UI library|vue|vue3`}],
+    ['meta', {name: 'keywords', content: `@web-design/web-vue,A Vue.js 3 UI library,vue,vue3`}],
+    ['meta', {name: 'description', content: `web-design|@web-design/web-vue|A Vue.js 3 UI library|vue|vue3`}],
     ['meta', {name: 'author', content: `魏国, forguo, wforguo`}],
     ['meta', {name: 'baidu-site-verification', content: `code-bakUos2v8l`}],
     ['script', {}, `

@@ -42,7 +42,7 @@ export default (configEnv: any) => {
             lib: {
                 entry: resolve(__dirname, './packages/index.ts'),
                 name: 'WeiDesign',
-                fileName: format => `we-design.${format}.js`
+                fileName: format => `web-vue.${format}.js`
             },
             rollupOptions: {
                 // 确保外部化处理那些你不想打包进库的依赖

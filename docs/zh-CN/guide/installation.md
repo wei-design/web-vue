@@ -5,43 +5,34 @@ lang: zh-CN
 
 # 安装
 
-## 环境支持
+### 环境
 
 - node：>=16.0.0
 
-### 版本
+### npm安装
 
-[![ElementPlus version badge](https://img.shields.io/npm/v/we-design.svg?style=flat-square)](https://www.npmjs.org/package/we-design)
+这里推荐`pnpm`进行安装
 
-## 安装
-
-### 包管理器
-
-```shell
-# 使用npm、yarn或者pnpm
-
-# NPM
-$ npm install we-design --save
-
-# Yarn
-$ yarn add we-design
-
-# pnpm
-$ pnpm install we-design
+```bash
+pnpm install @web-design/web-vue --save
 ```
 
 ### CDN
 
-- toDo
-
 #### unpkg
 
+[资源浏览](https://unpkg.com/browse/@web-design/web-vue/)
+
 ```html
 
+<script src="https://unpkg.com/@web-design/tool/dist/web-vue.umd.js"></script>
 ```
 
-#### jsDelivr
+#### jsdelivr
+
+[资源浏览](https://cdn.jsdelivr.net/npm/@web-design/web-vue/)
 
 ```html
 
+<script src="https://unpkg.com/@web-design/tool/dist/web-vue.umd.js"></script>
 ```
