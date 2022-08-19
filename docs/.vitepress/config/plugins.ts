@@ -6,6 +6,7 @@ import MarkdownIt from 'markdown-it'
 import mdContainer from 'markdown-it-container'
 // @ts-ignore
 import type Token from 'markdown-it/lib/token'
+import {highlight} from '../utils/highlight'
 import { docRoot } from './global';
 const localMd = MarkdownIt()
 
@@ -31,7 +32,7 @@ export const mdPlugin = (md: MarkdownIt) => {
      *   marker - optional (:), character to use in delimiter.
      */
 
-    md.use(mdContainer, 'vp-demo', {
+    md.use(mdContainer, 'demo', {
         validate(params) {
             return !!params.trim().match(/^demo\s*(.*)$/)
         },
@@ -54,8 +55,9 @@ export const mdPlugin = (md: MarkdownIt) => {
                 if (!source) throw new Error(`Incorrect source file: ${sourceFile}`)
                 // opening tag
                 return `<Demo
+                        source="${encodeURIComponent(highlight(source, 'vue'))}"
                         path="${sourceFile}"
-                        source="${encodeURIComponent(source)}"
+                        raw-source="${encodeURIComponent(source)}"
                         description="${localMd.render(description)}">`
             } else {
                 // closing tag

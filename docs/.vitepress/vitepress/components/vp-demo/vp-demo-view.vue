@@ -6,7 +6,7 @@
                 v-if="dynamicComponent"
                 v-bind="$attrs"
             />
-            <div v-else class="example-component--loading">
+            <div v-else class="example-component--spin">
                 <div></div>
                 <div></div>
             </div>
@@ -45,22 +45,22 @@
 // loading动画
 @keyframes lds-ripple {
     0% {
-        top: 36px;
-        left: 36px;
+        top: 18px;
+        left: 18px;
         width: 0;
         height: 0;
         opacity: 0;
     }
     4.9% {
-        top: 36px;
-        left: 36px;
+        top: 18px;
+        left: 18px;
         width: 0;
         height: 0;
         opacity: 0;
     }
     5% {
-        top: 36px;
-        left: 36px;
+        top: 18px;
+        left: 18px;
         width: 0;
         height: 0;
         opacity: 1;
@@ -68,25 +68,24 @@
     100% {
         top: 0px;
         left: 0px;
-        width: 100%;
-        height: 100%;
+        width: 36px;
+        height: 36px;
         opacity: 0;
     }
 }
 .example-component {
     padding: 1.5rem;
-    margin: 24px 0;
+    margin: 24px 0 0;
+    min-height: 86px;
     background-color: var(--bg-color);
     border: 1px solid var(--border-color);
     border-radius: 8px;
 
-    &--loading {
+    &--spin {
+        width: 36px;
+        height: 36px;
         display: inline-block;
         position: relative;
-        width: 72px;
-        height: 72px;
-        transform: scale3d(0.6,0.6,0.6);
-        transform-origin: center;
         div {
             position: absolute;
             border: 4px solid var(--theme-light);
