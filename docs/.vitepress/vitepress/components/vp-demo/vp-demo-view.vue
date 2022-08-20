@@ -74,13 +74,8 @@
     }
 }
 .example-component {
-    padding: 1.5rem;
-    margin: 24px 0 0;
     min-height: 86px;
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-
+    padding: 1.5rem;
     &--spin {
         width: 36px;
         height: 36px;

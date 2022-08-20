@@ -8,6 +8,15 @@
                     "text": "Button"
                 }
             ]
+        },
+        "layout": {
+            "text": "布局",
+            "items": [
+                {
+                    "link": "/layout",
+                    "text": "Layout"
+                }
+            ]
         }
     }
 }

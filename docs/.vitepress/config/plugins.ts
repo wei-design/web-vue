@@ -55,7 +55,7 @@ export const mdPlugin = (md: MarkdownIt) => {
                 if (!source) throw new Error(`Incorrect source file: ${sourceFile}`)
                 // opening tag
                 return `<Demo
-                        source="${encodeURIComponent(highlight(source, 'vue'))}"
+                        source="${encodeURIComponent(highlight(source, 'js'))}"
                         path="${sourceFile}"
                         raw-source="${encodeURIComponent(source)}"
                         description="${localMd.render(description)}">`

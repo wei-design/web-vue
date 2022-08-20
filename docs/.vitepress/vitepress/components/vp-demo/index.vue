@@ -1,15 +1,16 @@
 <template>
     <ClientOnly>
-        <!-- danger here DO NOT USE INLINE SCRIPT TAG -->
-        <div v-html="decodedDescription"/>
-
         <div class="vp-demo">
-            <vp-demo-view :path="path" />
-            <div
-                class="vp-demo__control"
-            >
-                <span class="vp-demo__control-btn" @click="copyRawSource">复制源代码</span>
-                <span class="vp-demo__control-btn" @click="toggleSourceVisible(!sourceVisible)">{{ sourceVisible ? '隐藏源码' : '查看源码' }}</span>
+            <!-- danger here DO NOT USE INLINE SCRIPT TAG -->
+            <div class="vp-demo__desc" v-html="decodedDescription"/>
+            <div class="vp-demo__panel">
+                <vp-demo-view :path="path" />
+                <div
+                    class="vp-demo__control"
+                >
+                    <span class="vp-demo__control-btn" @click="copyRawSource">复制源码</span>
+                    <span class="vp-demo__control-btn" @click="toggleSourceVisible(!sourceVisible)">{{ sourceVisible ? '隐藏源码' : '查看源码' }}</span>
+                </div>
             </div>
             <vp-demo-source v-show="sourceVisible" :source="source"/>
         </div>
@@ -56,7 +57,22 @@ const copyRawSource = async () => {
 </script>
 <style lang="scss" scoped>
 .vp-demo {
+    margin: 0 0 16px;
+    overflow: hidden;
+    &__desc {
+        font-size: 14px;
+        color: #5e6d82;
+    }
+    &__panel {
+        margin: 16px 0;
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-color);
+        border-radius: 8px;
+        overflow: hidden;
+    }
     &__control {
+        padding: 0 1.5rem;
+        border-top: 1px solid var(--border-color);
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -66,15 +82,11 @@ const copyRawSource = async () => {
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
         margin-top: -1px;
-        cursor: pointer;
-        position: sticky;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 10;
         &-btn {
             font-size: 14px;
             margin-left: 10px;
+            cursor: pointer;
+            color: #5e6d82;
             &:hover {
                 color: var(--color-primary);
             }

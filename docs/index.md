@@ -3,7 +3,7 @@ layout: home
 editLink: false
 
 hero:
-  name: We Design
+  name: Web Vue
   tagline: A Vue 3 UI Framework
   actions:
     - theme: brand
