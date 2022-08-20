@@ -1,7 +1,7 @@
 {
     "name": "@web-design/web-vue",
     "private": false,
-    "packageManager": "pnpm@7.1.0",
+    "packageManager": "pnpm@7.6.0",
     "version": "1.0.0",
     "author": "wforguo@qq.com",
     "description": "Web Design - A Vue.js 3 UI library",
