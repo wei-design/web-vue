@@ -58,7 +58,7 @@ export const mdPlugin = (md: MarkdownIt) => {
                         source="${encodeURIComponent(highlight(source, 'js'))}"
                         path="${sourceFile}"
                         raw-source="${encodeURIComponent(source)}"
-                        description="${localMd.render(description)}">`
+                        description="${encodeURIComponent(localMd.render(description))}">`
             } else {
                 // closing tag
                 return '</Demo>\n';

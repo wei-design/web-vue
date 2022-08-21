@@ -61,7 +61,7 @@ const copyRawSource = async () => {
     overflow: hidden;
     &__desc {
         font-size: 14px;
-        color: #5e6d82;
+        color: var(--text-color);
     }
     &__panel {
         margin: 16px 0;
@@ -71,14 +71,15 @@ const copyRawSource = async () => {
         overflow: hidden;
     }
     &__control {
+        height: 44px;
+        box-sizing: border-box;
         padding: 0 1.5rem;
-        border-top: 1px solid var(--border-color);
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        height: 44px;
-        box-sizing: border-box;
-        background-color: #fff;
+        border-top: 1px solid var(--border-color);
+        background-color: var(--bg-color);
+
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
         margin-top: -1px;

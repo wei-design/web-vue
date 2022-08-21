@@ -26,8 +26,8 @@ export const config: UserConfig = {
         },
         siteTitle: 'Web Design',
         lastUpdated: 'Last Updated',
-        logo: '/images/logo.png',
-        logoSmall: '/images/logo.png',
+        logo: '/images/logo-link.png',
+        logoSmall: '/images/logo-link.png',
 
         sidebar, // 没有s
         nav,

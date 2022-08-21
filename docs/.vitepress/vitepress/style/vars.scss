@@ -9,6 +9,12 @@
     --theme-dark: #009EFF;
     --color-primary: var(--theme-light);
     --header-light: #fff;
+
+    /**
+     * Text
+     */
+    --text-color: #303133;
+
     /**
      * Z Indexes
      *
@@ -37,11 +43,29 @@
     /**
     * Border
     */
-    --border-color: #dcdfe6;
+    --border-color: #ebebeb;
 
     /**
      * Font
      */
     --font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+// 黑色主题配置
+.dark {
+    /**
+     * BackGround
+     */
+    --bg-color: #141414;
+
+    /**
+     * Text
+     */
+    --text-color: #e5eaf3;
+
+    /**
+    * Border
+    */
+    --border-color: #4c4d4f;
 }
