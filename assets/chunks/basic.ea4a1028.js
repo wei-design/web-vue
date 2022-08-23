@@ -1,0 +1,1 @@
+import{_ as s,f as a,r as c,o as n,c as r,b as t,w as o,e as _}from"../app.57579f81.js";const p={class:"button-basic"},d=_("Default"),i=_("Primary"),u=a({setup(l){return(f,m)=>{const e=c("we-button");return n(),r("div",p,[t(e,null,{default:o(()=>[d]),_:1}),t(e,{type:"primary"},{default:o(()=>[i]),_:1})])}}});var v=s(u,[["__scopeId","data-v-57582b6c"]]);export{v as default};
