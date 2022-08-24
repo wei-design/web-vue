@@ -1,0 +1,1 @@
+import{_ as o,f as _,r as n,o as a,c as s,b as c,w as r,e as l}from"../app.701144ad.js";const d={class:"button-basic"},p=l("\u70B9\u51FB"),u=_({__name:"event",setup(i){const e=()=>{alert("click me")};return(v,m)=>{const t=n("we-button");return a(),s("div",d,[c(t,{onClick:e},{default:r(()=>[p]),_:1})])}}});var x=o(u,[["__scopeId","data-v-10627a56"]]);export{x as default};
