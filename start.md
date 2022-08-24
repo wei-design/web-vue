@@ -78,7 +78,7 @@ npm init vite@latest
 yarn create vite
 ```
 
-![vite-vue-ts.png](static/vite-vue-ts.jpg)
+![vite-vue-ts.png](static/doc-vite-vue-ts-init.jpg)
 
 选择`Vue`并选择使用`TypeScript`
 
@@ -106,7 +106,7 @@ shamefully-hoist=true
 
 - 安装
 
-```shell
+```sh
 npm install sass @vitejs/plugin-vue-jsx --save-dev 
 ```
 
@@ -147,13 +147,13 @@ export default defineConfig({
 
 [vite库模式配置](https://cn.vitejs.dev/guide/build.html#library-mode)
 
-```shell
+```sh
 build/lib.config.js
 ```
 
 执行：
 
-```shell
+```sh
 npm run lib:build
 ```
 
@@ -161,13 +161,13 @@ npm run lib:build
 
 配置
 
-```shell
+```sh
 build/doc.config.js
 ```
 
 执行：
 
-```shell
+```sh
 npm run -C docs build
 ```
 
@@ -175,16 +175,97 @@ npm run -C docs build
 
 ### package配置说明
 
-```js
+web-design【组织】，web-vue【包名】
+
+```json
 {
-    //  web-design【组织】，web-vue【包名】
-    "name": "@web-design/web-vue",
+    "name": "@web-design/web-vue"
 }
 ```
 
+### npm发布
+
+peerDependencies作用
+
+- 私有发布
+
+npm publish 命令执行，默认是进行私有发布
+scoped的包私有发布时需要收费
+
+- 公共发布
+
+```sh
+npm publish --access public
+```
+
+npm publish 时提示需要升级TLS 1.2的解决方案
+
+看看registry是否是https的，否则需要切换到https
+
+```sh
+npm config set registry https://registry.npmjs.org
+```
+
+副作用导致打包后的css不能引入
+
+[sideEffects](https://juejin.cn/post/7096307096836112398)
+
 ## 问题及解决
 
-TypeError: Invalid value used as weak map key
+- TypeError: Invalid value used as weak map key
 
 **md中有无法解析的标签导致**
 
+- 引入`lib/style.css`导致ModuleNotFound错误
+
+![img.png](static/error-import-web-vue-style.png)
+
+去掉`package`当中这行代码
+
+修改导出条件语法，新增`./lib/style.css`
+
+```json
+"exports": {
+    ".": {
+        "import": "./lib/web-vue.es.js",
+        "require": "./lib/web-vue.umd.js"
+    },
+    "./lib/style.css": "./lib/style.css"
+}
+```
+
+- vitepress打包报错
+
+To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+
+![vitepress打包错误](static/error-build-module-mjs.png)
+
+解决办法，替换如下
+
+[库模式](https://cn.vitejs.dev/guide/build.html#library-mode)
+
+vite.config
+
+```js
+build {
+    lib: {
+        entry: resolve(__dirname, './packages/index.ts'),
+            name: 'WebVue',
+            fileName: 'web-vue'
+    },
+}
+```
+
+package.json
+
+```json
+"main": "./lib/web-vue.umd.js",
+"module": "./lib/web-vue.mjs",
+"exports": {
+    ".": {
+        "import": "./lib/web-vue.mjs",
+        "require": "./lib/web-vue.umd.js"
+    },
+    "./lib/style.css": "./lib/style.css"
+},
+```

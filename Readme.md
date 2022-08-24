@@ -15,23 +15,26 @@ A Vue.js 3 UI library
 
 ## 安装
 
-### npm安装
+### npm
 
 这里推荐`pnpm`进行安装
 
-```bash
+```sh
 pnpm install @web-design/web-vue --save
 ```
 
-### CDN
+### cdn
 
 #### unpkg
 
-[资源浏览](https://unpkg.com/browse/@web-design/web-vue/)
+[资源浏览](https://unpkg.com/@web-design/web-vue/)
 
 ```html
-
-<script src="https://unpkg.com/@web-design/tool/dist/web-vue.umd.js"></script>
+<link
+    rel="stylesheet"
+    href="//unpkg.com/@web-design/web-vue/lib/style.css"
+/>
+<script src="//unpkg.com/@web-design/web-vue"></script>
 ```
 
 #### jsdelivr
@@ -39,8 +42,11 @@ pnpm install @web-design/web-vue --save
 [资源浏览](https://cdn.jsdelivr.net/npm/@web-design/web-vue/)
 
 ```html
-
-<script src="https://unpkg.com/@web-design/tool/dist/web-vue.umd.js"></script>
+<link
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/@web-design/web-vue/lib/style.css"
+/>
+<script src="//cdn.jsdelivr.net/npm/@web-design/web-vue"></script>
 ```
 
 ## 使用
@@ -86,3 +92,7 @@ app.use(Button).mount('#app');
 ```vue
 <WeButton :loading="true">按钮组件</WeButton>
 ```
+
+---
+
+有问题欢迎issue...

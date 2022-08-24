@@ -5,7 +5,7 @@ lang: zh-CN
 
 # 快速开始
 
-### 全局引入
+## 全局引入
 
 在`main.js`中
 
@@ -26,7 +26,7 @@ app.use(WeDesign).mount('#app');
 <WeButton :loading="true">按钮组件</WeButton>
 ```
 
-### 按需引入
+## 按需引入
 
 `main.js`中
 

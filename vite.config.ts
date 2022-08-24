@@ -4,21 +4,38 @@
  * @Description: lib.config
  */
 import { resolve } from 'path'
-import { defineConfig, loadEnv } from 'vite'
+import { Alias, defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Markdown from 'vite-plugin-md' // vue中使用md
 // 提取ts文件
 import dts from 'vite-plugin-dts'
+import chalk from 'chalk'
 import dayjs from 'dayjs'
 import pkg from './package.json'
-const { version: APP_VERSION } = pkg
+
+const { version: APP_VERSION, name: APP_NAME } = pkg
+
+const banner = `/*! ${APP_NAME} v${APP_VERSION} */\n`
+console.log(chalk.blue(banner))
+
+const alias: Alias[] = [
+    {
+        find: '@',
+        replacement: `${resolve(__dirname, './src')}`
+    },
+    {
+        find: /^web-design(\/(es|lib))?$/,
+        replacement: `${resolve(__dirname, './packages/index.ts')}/`
+    }
+]
 
 // 文档: https://vitejs.dev/config/
 export default (configEnv: any) => {
     const { mode } = configEnv
     const env = loadEnv(mode, process.cwd())
     // 增加环境变量
+    env.APP_NAME = APP_NAME
     env.APP_VERSION = APP_VERSION
     env.APP_BUILD_TIME = dayjs().format('YYYY-MM-DD HH:mm:ss')
     return defineConfig({
@@ -28,10 +45,7 @@ export default (configEnv: any) => {
             host: true
         },
         resolve: {
-            alias: {
-                '@': resolve(__dirname, './src'),
-                '@/packages': resolve(__dirname, './packages')
-            }
+            alias
         },
         define: {
             'process.env': JSON.stringify(env)
@@ -41,8 +55,8 @@ export default (configEnv: any) => {
             outDir: 'lib',
             lib: {
                 entry: resolve(__dirname, './packages/index.ts'),
-                name: 'WeiDesign',
-                fileName: format => `web-vue.${format}.js`
+                name: 'WebVue',
+                fileName: 'web-vue'
             },
             rollupOptions: {
                 // 确保外部化处理那些你不想打包进库的依赖

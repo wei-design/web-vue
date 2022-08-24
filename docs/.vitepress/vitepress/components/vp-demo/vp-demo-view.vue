@@ -32,9 +32,7 @@
             const module = (modules[modulesKey]);
             // 找到example的组件，并加载
             if (modulesKey.split(".vue")[0].endsWith(props.path)) {
-                module().then(res => {
-                    dynamicComponent.value = res.default
-                });
+                dynamicComponent.value = module.default
             }
         }
     });

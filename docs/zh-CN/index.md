@@ -2,8 +2,10 @@
 layout: home
 editLink: false
 
+title: Web Vue
+titleTemplate: A Vue 3 UI Framework
 hero:
-  name: Web Design
+  name: Web Vue
   tagline: A Vue 3 UI Framework
   actions:
     - theme: brand

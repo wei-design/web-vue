@@ -12,11 +12,12 @@ import {REPO_PATH, REPO_BRANCH} from './config/global'
 import * as process from "process";
 
 const env = process.env.NODE_ENV;
+
 export const config: UserConfig = {
     head,
     lang: 'zh-CN',
     base: env === 'production' ? '/' : '/',
-    title: 'Web Design',
+    title: 'Web Vue',
     description: 'A Vue 3 UI Framework',
     lastUpdated: true,
     themeConfig: {

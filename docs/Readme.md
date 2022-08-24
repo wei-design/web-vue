@@ -171,7 +171,7 @@ const nav = [
 
 基本效果
 
-![docs.png](../static/docs.png)
+![docs.png](../static/doc-start.png)
 
 
 ### 增加源码预览

@@ -4,12 +4,15 @@
     "packageManager": "pnpm@7.6.0",
     "version": "1.0.0",
     "author": "wforguo@qq.com",
-    "description": "Web Design - A Vue.js 3 UI library",
+    "description": "Web Design - A Vue.js 3 UI library, @web-design/web-vue",
     "license": "ISC",
     "keywords": [
+        "@web-design/web-vue",
         "web-design",
         "vue",
         "vue3",
+        "vite",
+        "vite3",
         "Vue.js 3 UI library",
         "Web Design - A Vue.js 3 UI library",
         "javascript"
@@ -34,7 +37,7 @@
         "release:minor": "npm run release -- --release-as minor",
         "release:patch": "npm run release -- --release-as patch"
     },
-    "homepage": "https://github.com/wei-design/web-vue.git",
+    "homepage": "https://web-design.cloud-app.com.cn",
     "repository": {
         "type": "git",
         "url": "https://github.com/wei-design/web-vue.git"
@@ -45,17 +48,20 @@
         "Readme.md",
         "package.json"
     ],
-    "main": "./lib/web-design.umd.js",
-    "module": "./lib/web-design.es.js",
+    "main": "./lib/web-vue.umd.js",
+    "module": "./lib/web-vue.mjs",
     "exports": {
         ".": {
-            "import": "./lib/web-design.es.js",
-            "require": "./lib/web-design.umd.js"
-        }
+            "import": "./lib/web-vue.mjs",
+            "require": "./lib/web-vue.umd.js"
+        },
+        "./lib/style.css": "./lib/style.css"
+    },
+    "peerDependencies": {
+        "vue": "^3.2.33"
     },
     "dependencies": {
-        "dayjs": "^1.11.4",
-        "vue": "3.2.25"
+        "dayjs": "^1.11.4"
     },
     "devDependencies": {
         "@commitlint/cli": "^17.0.0",
@@ -64,8 +70,8 @@
         "@types/sass": "^1.43.1",
         "@typescript-eslint/eslint-plugin": "^5.27.0",
         "@typescript-eslint/parser": "^5.27.0",
-        "@vitejs/plugin-vue": "2.3.3",
-        "@vitejs/plugin-vue-jsx": "1.3.10",
+        "@vitejs/plugin-vue": "^3.0.3",
+        "@vitejs/plugin-vue-jsx": "^2.0.0",
         "chalk": "^4.1.2",
         "commitizen": "^4.2.4",
         "cross-env": "^7.0.3",
@@ -78,13 +84,14 @@
         "husky": "^8.0.1",
         "prettier": "^2.6.2",
         "rimraf": "^3.0.2",
-        "sass": "1.49.7",
+        "sass": "^1.49.7",
         "standard-version": "^9.5.0",
         "typescript": "^4.7.2",
-        "vite": "2.9.9",
-        "vite-plugin-dts": "1.2.0",
-        "vite-plugin-md": "0.15.0",
-        "vue-tsc": "0.34.7"
+        "vite": "^3.0.9",
+        "vite-plugin-dts": "^1.2.0",
+        "vite-plugin-md": "^0.15.0",
+        "vue": "^3.2.33",
+        "vue-tsc": "^0.40.1"
     },
     "config": {
         "commitizen": {

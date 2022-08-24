@@ -10,11 +10,15 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "esModuleInterop": true,
+        "skipLibCheck": true,
         "lib": [
             "esnext",
             "dom"
         ],
-        "skipLibCheck": true
+        "paths": {
+            "@/*":["./src/*"],
+            "web-design":["./packages/index.ts"]
+        }
     },
     "include": [
         "src/**/*.ts",
@@ -27,8 +31,5 @@
             "path": "./tsconfig.node.json"
         }
     ],
-    "paths": {
-        "@/*":["./src/*"],
-        "@/packages/*":["./src/packages/*"]
-    }
+
 }
