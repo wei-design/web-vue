@@ -11,7 +11,7 @@ A Vue.js 3 UI library
 - 💪 [Vue3](https://vuejs.org)
 - 🔥 TypeScript
 
-[快速开始](https://wei-design.github.io/web-vue/)
+[快速开始](https://web-design.cloud-app.com.cn)
 
 ## 安装
 
