@@ -25,6 +25,10 @@ jobs:
             - name: Checkout - 检出代码
               uses: actions/checkout@v3
 
+            # 配置时区
+            - name: timezone - 配置时区
+              run: rm -f /etc/localtime \ && ln -sv /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \ && echo "Asia/Shanghai" > /etc/timezone
+
             # 使用pnpm
             - name: Setup pnpm
               uses: pnpm/action-setup@v2
