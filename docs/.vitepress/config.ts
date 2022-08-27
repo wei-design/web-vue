@@ -16,7 +16,7 @@ const env = process.env.NODE_ENV;
 export const config: UserConfig = {
     head,
     lang: 'zh-CN',
-    base: env === 'production' ? '/' : '/',
+    base: env === 'production' ? '/web-vue/' : '/',
     title: 'Web Vue',
     description: 'A Vue 3 UI Framework',
     lastUpdated: true,
