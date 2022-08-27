@@ -17,7 +17,7 @@
         ],
         "paths": {
             "@/*":["./src/*"],
-            "web-design":["./packages/index.ts"]
+            "wei_design":["./packages/index.ts"]
         }
     },
     "include": [

@@ -25,7 +25,7 @@ export const config: UserConfig = {
             // 编辑此页
             pattern: `https://github.com/${REPO_PATH}/edit/${REPO_BRANCH}/docs/:path`,
         },
-        siteTitle: 'Web Design',
+        siteTitle: 'Wei Design',
         lastUpdated: 'Last Updated',
         logo: '/images/logo-link.png',
         logoSmall: '/images/logo-link.png',
@@ -56,12 +56,12 @@ export const config: UserConfig = {
     locales: {
         '/zh-CN': {
             lang: 'zh-CN',
-            title: 'Web Design',
+            title: 'Wei Design',
             description: 'A Vue 3 UI Framework',
         },
         '/en-US/': {
             lang: 'en-US',
-            title: 'Web Design',
+            title: 'Wei Design',
             description: 'A Vue 3 UI Framework',
         },
     },

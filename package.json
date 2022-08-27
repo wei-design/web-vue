@@ -1,20 +1,21 @@
 {
-    "name": "@web-design/web-vue",
+    "name": "@wei_design/web-vue",
     "private": false,
     "packageManager": "pnpm@7.6.0",
     "version": "1.0.0",
     "author": "wforguo@qq.com",
-    "description": "Web Design - A Vue.js 3 UI library, @web-design/web-vue",
+    "description": "Wei Design - A Vue.js 3 UI library, @wei_design/web-vue",
     "license": "ISC",
     "keywords": [
-        "@web-design/web-vue",
-        "web-design",
+        "@wei_design/web-vue",
+        "wei_design",
+        "wei design",
         "vue",
         "vue3",
         "vite",
         "vite3",
         "Vue.js 3 UI library",
-        "Web Design - A Vue.js 3 UI library",
+        "Wei Design - A Vue.js 3 UI library",
         "javascript"
     ],
     "scripts": {
@@ -37,7 +38,7 @@
         "release:minor": "npm run release -- --release-as minor",
         "release:patch": "npm run release -- --release-as patch"
     },
-    "homepage": "https://web-design.cloud-app.com.cn",
+    "homepage": "https://wei-design.github.io/web-vue/",
     "repository": {
         "type": "git",
         "url": "https://github.com/wei-design/web-vue.git"

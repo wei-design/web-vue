@@ -1,16 +1,16 @@
 {
-    "name": "@web-design/web-vue",
+    "name": "@wei_design/web-vue",
     "private": false,
     "version": "1.0.0",
     "author": "wforguo@qq.com",
-    "description": "Web Design - A Vue.js 3 UI library",
+    "description": "Wei Design - A Vue.js 3 UI library",
     "license": "ISC",
     "keywords": [
-        "web-design",
+        "wei_design",
         "vue",
         "vue3",
         "Vue.js 3 UI library",
-        "Web Design - A Vue.js 3 UI library",
+        "Wei Design - A Vue.js 3 UI library",
         "javascript"
     ],
     "scripts": {
@@ -19,7 +19,7 @@
         "serve": "cross-env NODE_ENV=production vitepress serve . --port 5001"
     },
     "dependencies": {
-        "@web-design/web-vue": "npm:@web-design/web-vue@latest",
+        "@wei_design/web-vue": "npm:@wei_design/web-vue@latest",
         "arraybuffer-loader": "^1.0.8",
         "axios": "^0.27.2",
         "clipboard-copy": "^4.0.1",

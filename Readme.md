@@ -1,9 +1,9 @@
-# @web-design/web-vue
+# @wei_design/web-vue
 
 A Vue.js 3 UI library
 
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli)
-[![WeDesign version badge](https://img.shields.io/npm/v/@web-design/web-vue.svg?style=flat-square)](https://www.npmjs.org/package/@web-design/web-vue)
+[![WeDesign version badge](https://img.shields.io/npm/v/@wei_design/web-vue.svg?style=flat-square)](https://www.npmjs.org/package/@wei_design/web-vue)
 
 ---
 
@@ -11,7 +11,7 @@ A Vue.js 3 UI library
 - 💪 [Vue3](https://vuejs.org)
 - 🔥 TypeScript
 
-[快速开始](https://web-design.cloud-app.com.cn)
+[快速开始](https://wei_design.cloud-app.com.cn)
 
 ## 安装
 
@@ -20,33 +20,33 @@ A Vue.js 3 UI library
 这里推荐`pnpm`进行安装
 
 ```sh
-pnpm install @web-design/web-vue --save
+pnpm install @wei_design/web-vue --save
 ```
 
 ### cdn
 
 #### unpkg
 
-[资源浏览](https://unpkg.com/@web-design/web-vue/)
+[资源浏览](https://unpkg.com/@wei_design/web-vue/)
 
 ```html
 <link
     rel="stylesheet"
-    href="//unpkg.com/@web-design/web-vue/lib/style.css"
+    href="//unpkg.com/@wei_design/web-vue/lib/style.css"
 />
-<script src="//unpkg.com/@web-design/web-vue"></script>
+<script src="//unpkg.com/@wei_design/web-vue"></script>
 ```
 
 #### jsdelivr
 
-[资源浏览](https://cdn.jsdelivr.net/npm/@web-design/web-vue/)
+[资源浏览](https://cdn.jsdelivr.net/npm/@wei_design/web-vue/)
 
 ```html
 <link
     rel="stylesheet"
-    href="//cdn.jsdelivr.net/npm/@web-design/web-vue/lib/style.css"
+    href="//cdn.jsdelivr.net/npm/@wei_design/web-vue/lib/style.css"
 />
-<script src="//cdn.jsdelivr.net/npm/@web-design/web-vue"></script>
+<script src="//cdn.jsdelivr.net/npm/@wei_design/web-vue"></script>
 ```
 
 ## 使用
@@ -59,7 +59,7 @@ pnpm install @web-design/web-vue --save
 import { createApp } from 'vue';
 import App from './App.vue';
 // 完整引入组件库
-import WeDesign from '@web-design/web-vue';
+import WeDesign from '@wei_design/web-vue';
 
 const app = createApp(App);
 // 全局安装
@@ -80,7 +80,7 @@ app.use(WeDesign).mount('#app');
 import { createApp } from 'vue';
 import App from './App.vue';
 // 按需引入
-import { Button } from '@web-design/web-vue';
+import { Button } from '@wei_design/web-vue';
 
 const app = createApp(App);
 

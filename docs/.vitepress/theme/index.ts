@@ -5,9 +5,9 @@
  */
 import DefaultTheme from 'vitepress/theme'
 // @ts-ignore
-// import WeDesign from 'web-design' //本地开发
-import WeDesign from '@web-design/web-vue'
-import '@web-design/web-vue/lib/style.css'
+// import WeDesign from 'wei_design' //本地开发
+import WeDesign from '@wei_design/web-vue'
+import '@wei_design/web-vue/lib/style.css'
 
 import {VPDemo} from '../vitepress'
 
