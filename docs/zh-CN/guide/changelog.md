@@ -7,6 +7,6 @@ lang: zh-CN
 
 ## 版本日志
 
-- v1.0.0
+[更新记录](https://github.com/wei-design/web-vue/blob/feature/major-dev/CHANGELOG.md)
 
 ...

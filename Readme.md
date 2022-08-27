@@ -95,4 +95,8 @@ app.use(Button).mount('#app');
 
 ---
 
+## 版本记录
+
+[版本记录](CHANGELOG.md)
+
 有问题欢迎issue...
