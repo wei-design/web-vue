@@ -7,7 +7,7 @@ lang: zh-CN
 
 最新版本：
 
-[![WeDesign version badge](https://img.shields.io/npm/v/@wei_design/web-vue.svg?style=flat-square)](https://www.npmjs.org/package/@wei_design/web-vue)
+[![Wei Design](https://img.shields.io/npm/v/@wei_design/web-vue.svg?style=flat-square)](https://www.npmjs.org/package/@wei_design/web-vue)
 
 环境要求：
 
