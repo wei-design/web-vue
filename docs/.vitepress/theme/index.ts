@@ -4,8 +4,7 @@
  * @Description: 主题配置
  */
 import DefaultTheme from 'vitepress/theme'
-// @ts-ignore
-// import WeDesign from 'wei_design' //本地开发
+// import WeDesign from 'wei_design' // 本地开发
 import WeDesign from '@wei_design/web-vue'
 import '@wei_design/web-vue/lib/style.css'
 

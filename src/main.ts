@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 // 完整引入组件库
-import WeDesign from 'wei_design' //本地开发
+import WeDesign from 'wei_design' // 本地开发
 
 const app = createApp(App)
 
