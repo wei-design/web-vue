@@ -28,6 +28,7 @@ specifiers:
   vite: ^3.0.9
   vite-plugin-dts: ^1.2.0
   vite-plugin-md: ^0.15.0
+  vite-plugin-meta-env: ^1.0.0
   vue: ^3.2.33
   vue-tsc: ^0.40.1
 
@@ -61,6 +62,7 @@ devDependencies:
   vite: 3.0.9_sass@1.49.7
   vite-plugin-dts: 1.2.0_vite@3.0.9
   vite-plugin-md: 0.15.0_sass@1.49.7+vite@3.0.9
+  vite-plugin-meta-env: 1.0.0
   vue: 3.2.37
   vue-tsc: 0.40.1_typescript@4.7.4
 
@@ -4493,6 +4495,11 @@ packages:
       - stylus
       - supports-color
       - terser
+    dev: true
+
+  /vite-plugin-meta-env/1.0.0:
+    resolution: {integrity: sha512-GPf8etAQL+yd7uAJFyiKzSaDoMZENGZJL4MuEhANwKsENf9LiKTZiDOz4JIC5nmnvw8GKFOT4PCXN/1YeOdoSQ==}
+    engines: {node: '>=16.0.0'}
     dev: true
 
   /vite/3.0.9_sass@1.49.7:

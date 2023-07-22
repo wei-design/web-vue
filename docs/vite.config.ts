@@ -6,8 +6,9 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import DefineOptions from 'unplugin-vue-define-options/vite'
 import UnoCSS from 'unocss/vite'
 import dayjs from 'dayjs';
-import pkg from '../package.json';
+import pkg, { name as title, version as APP_VERSION } from "../package.json";
 import chalk from "chalk";
+import VitePluginMetaEnv from "vite-plugin-meta-env";
 const { name: DOC_NAME, version: DOC_VERSION } = pkg;
 
 const alias: Alias[] = [
@@ -24,13 +25,14 @@ const alias: Alias[] = [
 const banner = `/*! ${DOC_NAME} v${DOC_VERSION} */\n`
 console.log(chalk.blue(banner))
 
-export default defineConfig(async (configEnv) => {
-    const { mode } = configEnv
-    const env = loadEnv(mode, process.cwd())
+export default defineConfig( () => {
     // 增加环境变量
-    env.DOC_NAME = DOC_NAME
-    env.DOC_VERSION = DOC_VERSION
-    env.DOC_BUILD_TIME = dayjs().format('YYYY-MM-DD HH:mm:ss')
+    const metaEnv = {
+        DOC_VERSION,
+        DOC_NAME,
+        DOC_BUILD_TIME: dayjs().format('YYYY-MM-DD HH:mm:ss')
+    }
+
     return {
         server: {
             open: false,
@@ -40,22 +42,14 @@ export default defineConfig(async (configEnv) => {
         resolve: {
             alias,
         },
-        define: {
-            'process.env': JSON.stringify(env)
-        },
         plugins: [
             vueJsx(),
             DefineOptions(),
             UnoCSS(),
             Inspect(),
+            // 环境变量
+            VitePluginMetaEnv(metaEnv, 'import.meta.env'),
+            VitePluginMetaEnv(metaEnv, 'process.env')
         ],
-        // Rollup failed to resolve import "vue" 的解决
-        // build: {
-        //     rollupOptions: {
-        //         external: [
-        //             "vue"
-        //         ]
-        //     }
-        // }
     }
 })
