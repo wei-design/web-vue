@@ -4,20 +4,16 @@
  * @Description: lib.config
  */
 import { resolve } from 'path'
-import { Alias, defineConfig, loadEnv } from 'vite'
+import { Alias, defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Markdown from 'vite-plugin-md' // vue中使用md
 // 提取ts文件
 import dts from 'vite-plugin-dts'
-import chalk from 'chalk'
 import dayjs from 'dayjs'
-import pkg from './package.json'
+import VitePluginMetaEnv from 'vite-plugin-meta-env'
 
-const { version: APP_VERSION, name: APP_NAME } = pkg
-
-const banner = `/*! ${APP_NAME} v${APP_VERSION} */\n`
-console.log(chalk.blue(banner))
+const { name: title, version: APP_VERSION } = require('./package.json')
 
 const alias: Alias[] = [
     {
@@ -31,13 +27,14 @@ const alias: Alias[] = [
 ]
 
 // 文档: https://vitejs.dev/config/
-export default (configEnv: any) => {
-    const { mode } = configEnv
-    const env = loadEnv(mode, process.cwd())
+export default () => {
     // 增加环境变量
-    env.APP_NAME = APP_NAME
-    env.APP_VERSION = APP_VERSION
-    env.APP_BUILD_TIME = dayjs().format('YYYY-MM-DD HH:mm:ss')
+    const metaEnv = {
+        APP_VERSION,
+        APP_NAME: title,
+        APP_BUILD_TIME: dayjs().format('YYYY-MM-DD HH:mm:ss')
+    }
+
     return defineConfig({
         server: {
             open: true,
@@ -46,9 +43,6 @@ export default (configEnv: any) => {
         },
         resolve: {
             alias
-        },
-        define: {
-            'process.env': JSON.stringify(env)
         },
         // [vite库模式配置](https://cn.vitejs.dev/guide/build.html#library-mode)
         build: {
@@ -69,6 +63,14 @@ export default (configEnv: any) => {
                 }
             }
         },
-        plugins: [vue({ include: [/\.vue$/, /\.md$/] }), vueJsx(), Markdown(), dts()]
+        plugins: [
+            vue({ include: [/\.vue$/, /\.md$/] }),
+            vueJsx(),
+            Markdown(),
+            dts(),
+            // 环境变量
+            VitePluginMetaEnv(metaEnv, 'import.meta.env'),
+            VitePluginMetaEnv(metaEnv, 'process.env')
+        ]
     })
 }

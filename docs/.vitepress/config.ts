@@ -29,7 +29,6 @@ export const config: UserConfig = {
         lastUpdated: 'Last Updated',
         logo: '/images/logo-link.png',
         logoSmall: '/images/logo-link.png',
-
         sidebar, // 没有s
         nav,
         locales: {
@@ -48,9 +47,16 @@ export const config: UserConfig = {
                 lastUpdated: 'LastUpdate',
             },
         },
+        socialLinks: [
+            { icon: 'github', link: 'https://github.com/wforguo/' }
+        ],
+        search: {
+            provider: 'local',
+        },
         footer: {
             message: 'Released under the MIT License.',
-            copyright: 'Copyright © 2022-present forguo'
+            copyright: `<a target="_blank" href="https://github.com/wforguo" style="color: #047857">Copyright &copy; 2016 - ${new Date().getFullYear()} &nbsp;forguo</a>`
+
         }
     },
     locales: {

@@ -18,6 +18,6 @@
     "types": ["../typings/components"],
     "jsx": "preserve"
   },
-  "include": ["**/*", ".vitepress/**/*"],
+  "include": ["**/*", ".vitepress/**/*", "env.d.ts"],
   "exclude": ["node_modules"]
 }

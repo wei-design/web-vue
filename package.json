@@ -91,6 +91,7 @@
         "vite": "^3.0.9",
         "vite-plugin-dts": "^1.2.0",
         "vite-plugin-md": "^0.15.0",
+        "vite-plugin-meta-env": "^1.0.0",
         "vue": "^3.2.33",
         "vue-tsc": "^0.40.1"
     },
