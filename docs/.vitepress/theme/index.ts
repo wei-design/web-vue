@@ -9,7 +9,8 @@ import WeDesign from '@wei_design/web-vue'
 import '@wei_design/web-vue/lib/style.css'
 
 import { VPDemo } from '../vitepress'
-console.log('import.meta.env', import.meta.env)
+
+console.log(import.meta.env)
 
 // 版本及打包日期
 console.log(
