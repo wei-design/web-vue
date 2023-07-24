@@ -26,7 +26,7 @@
         "docs:dev": "npm run -C docs dev",
         "docs:build": "npm run -C docs build",
         "preview": "vite preview",
-        "clean:lib": "rimraf lib",
+        "lib:clean": "rimraf lib",
         "clean:modules": "rimraf node_modules",
         "prepare": "husky install",
         "lint": "eslint --ext .vue,.js,.jsx,.ts,.tsx  --ignore-path .gitignore --fix packages",
@@ -36,7 +36,8 @@
         "release:rc": "standard-version --prerelease rc",
         "release:major": "npm run release -- --release-as major",
         "release:minor": "npm run release -- --release-as minor",
-        "release:patch": "npm run release -- --release-as patch"
+        "release:patch": "npm run release -- --release-as patch",
+        "prepublishOnly": "npm run lib:clean && yarn run lib:build"
     },
     "homepage": "https://wei-design.github.io/web-vue/",
     "repository": {
