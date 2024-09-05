@@ -1,9 +1,9 @@
 话不多说，先看成品👇
-# @wei_design/web-vue
+# @wei-design/web-vue
 [A Vue.js 3 UI library](https://wei-design.github.io/web-vue/)
 
 ![](https://img.shields.io/badge/%E6%96%87%E6%A1%A3%E5%BA%93-vitepress-brightgreen.svg#crop=0&crop=0&crop=1&crop=1&id=tXEY6&originHeight=20&originWidth=102&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-![](https://img.shields.io/npm/v/@wei_design/web-vue.svg#crop=0&crop=0&crop=1&crop=1&id=b1XRO&originHeight=20&originWidth=80&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+![](https://img.shields.io/npm/v/@wei-design/web-vue.svg#crop=0&crop=0&crop=1&crop=1&id=b1XRO&originHeight=20&originWidth=80&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 ![](https://img.shields.io/github/stars/wei-design/web-vue#crop=0&crop=0&crop=1&crop=1&id=o8sRG&originHeight=20&originWidth=54&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 ## 技术栈
 **关于技术选型**
@@ -112,7 +112,7 @@ npm run dev
 import { createApp } from 'vue';
 import App from './App.vue';
 // 完整引入组件库
-import WeDesign from '@wei_design/web-vue';
+import WeDesign from '@wei-design/web-vue';
 
 const app = createApp(App);
 // 全局安装
@@ -130,7 +130,7 @@ app.use(WeDesign).mount('#app');
 import { createApp } from 'vue';
 import App from './App.vue';
 // 按需引入
-import { Button } from '@wei_design/web-vue';
+import { Button } from '@wei-design/web-vue';
 
 const app = createApp(App);
 
@@ -384,13 +384,13 @@ build: {
 [package.json中的browser，module，main解析](https://juejin.cn/post/6844903862977953806)
 ```json
 {
-    "name": "@wei_design/web-vue", // 包名，可以直接是包名，也可以@wei_design[组织]/web-vue[包名]
+    "name": "@wei-design/web-vue", // 包名，可以直接是包名，也可以@wei-design[组织]/web-vue[包名]
     "private": false, // 是否私有包，发布公共的需要设置false
     "version": "1.0.0", // 版本，每次发布都需要修改
     "author": "wforguo@qq.com",
-    "description": "Wei Design - A Vue.js 3 UI library, @wei_design/web-vue", // 包的简述
+    "description": "Wei Design - A Vue.js 3 UI library, @wei-design/web-vue", // 包的简述
     "keywords": [
-        "@wei_design/web-vue" // 关键词
+        "@wei-design/web-vue" // 关键词
     ],
     "homepage": "https://wei-design.github.io/web-vue/",
     "repository": {
@@ -447,7 +447,7 @@ npm publish --access public
 import { createApp } from 'vue';
 import App from './App.vue';
 // 完整引入组件库
-import WeDesign from '@wei_design/web-vue';
+import WeDesign from '@wei-design/web-vue';
 
 const app = createApp(App);
 // 全局安装
@@ -458,30 +458,30 @@ app.use(WeDesign).mount('#app');
 **Free CDN for Open Source**
 两个都是开源免费的CDN，只要你发布了npm，替换下面包名为就可以去使用了
 ### 1、unpkg
-[资源浏览](https://unpkg.com/@wei_design/web-vue/) [https://unpkg.com/@wei_design/web-vue/](https://unpkg.com/@wei_design/web-vue/)
+[资源浏览](https://unpkg.com/@wei-design/web-vue/) [https://unpkg.com/@wei-design/web-vue/](https://unpkg.com/@wei-design/web-vue/)
 
 ```html
 <link
     rel="stylesheet"
-    href="//unpkg.com/@wei_design/web-vue/lib/style.css"
+    href="//unpkg.com/@wei-design/web-vue/lib/style.css"
 />
-<script src="//unpkg.com/@wei_design/web-vue"></script>
+<script src="//unpkg.com/@wei-design/web-vue"></script>
 ```
 
 ### 2、jsdelivr
-[资源浏览](https://cdn.jsdelivr.net/npm/@wei_design/web-vue/) [https://cdn.jsdelivr.net/npm/@wei_design/web-vue/](https://cdn.jsdelivr.net/npm/@wei_design/web-vue/)
+[资源浏览](https://cdn.jsdelivr.net/npm/@wei-design/web-vue/) [https://cdn.jsdelivr.net/npm/@wei-design/web-vue/](https://cdn.jsdelivr.net/npm/@wei-design/web-vue/)
 
 ```html
 <link
     rel="stylesheet"
-    href="//cdn.jsdelivr.net/npm/@wei_design/web-vue/lib/style.css"
+    href="//cdn.jsdelivr.net/npm/@wei-design/web-vue/lib/style.css"
 />
-<script src="//cdn.jsdelivr.net/npm/@wei_design/web-vue"></script>
+<script src="//cdn.jsdelivr.net/npm/@wei-design/web-vue"></script>
 ```
 
 ## 问题及解决
 列举了一些自己遇到的问题，希望不会帮到你
-如果有遇到问题，不知道怎么解决，可以到github上[@wei_design/web-vue](https://github.com/wei-design/web-vue)对比代码看下是否哪里有不对的地方
+如果有遇到问题，不知道怎么解决，可以到github上[@wei-design/web-vue](https://github.com/wei-design/web-vue)对比代码看下是否哪里有不对的地方
 
 - 【组件库发布】npm publish 时提示需要升级TLS 1.2的解决方案
 

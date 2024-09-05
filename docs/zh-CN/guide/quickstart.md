@@ -13,7 +13,7 @@ lang: zh-CN
 import { createApp } from 'vue';
 import App from './App.vue';
 // 完整引入组件库
-import WeDesign from '@wei_design/web-vue';
+import WeDesign from '@wei-design/web-vue';
 
 const app = createApp(App);
 // 全局安装
@@ -34,7 +34,7 @@ app.use(WeDesign).mount('#app');
 import { createApp } from 'vue';
 import App from './App.vue';
 // 按需引入
-import { Button } from '@wei_design/web-vue';
+import { Button } from '@wei-design/web-vue';
 
 const app = createApp(App);
 

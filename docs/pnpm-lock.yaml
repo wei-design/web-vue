@@ -5,7 +5,7 @@ specifiers:
   '@vitejs/plugin-vue-jsx': ^2.0.0
   '@vue/shared': ^3.2.33
   '@vueuse/core': ^9.1.1
-  '@wei_design/web-vue': npm:@wei_design/web-vue@latest
+  '@wei-design/web-vue': npm:@wei-design/web-vue@latest
   arraybuffer-loader: ^1.0.8
   axios: ^0.27.2
   chalk: ^4.1.2
@@ -34,7 +34,7 @@ specifiers:
   vue: ^3.2.33
 
 dependencies:
-  '@wei_design/web-vue': 1.0.0_vue@3.2.37
+  '@wei-design/web-vue': 1.0.0_vue@3.2.37
   arraybuffer-loader: 1.0.8
   axios: 0.27.2
   clipboard-copy: 4.0.1
@@ -2405,7 +2405,7 @@ packages:
       - vue
     dev: true
 
-  /@wei_design/web-vue/1.0.0_vue@3.2.37:
+  /@wei-design/web-vue/1.0.0_vue@3.2.37:
     resolution: {integrity: sha512-/AOmf5bg1B/N944xmgrwJnGmg8LfWMBvJgk+Ekv2cJZyqAGcPmfwho6+rHp5N1gx2a7Rdfj7zBzFtCmfd3LqyQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:

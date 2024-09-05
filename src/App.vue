@@ -1,7 +1,7 @@
 <template>
-    <h2>wei_design</h2>
+    <h2>wei-design</h2>
     <hr style="margin: 32px 100px" />
-    <img src="/favicon.png" alt="wei_design" title="wei_design" />
+    <img src="/favicon.png" alt="wei-design" title="wei-design" />
     <div>
         <WeButton :loading="true">按钮组件</WeButton>
     </div>

@@ -12,7 +12,7 @@
     "skipLibCheck": true,
     "lib": ["WebWorker"],
     "paths": {
-      "wei_design": ["../packages/index.ts"],
+      "wei-design": ["../packages/index.ts"],
       "~/*": ["./.vitepress/vitepress/*"]
     },
     "types": ["../typings/components"],

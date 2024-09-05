@@ -21,7 +21,7 @@ const alias: Alias[] = [
         replacement: `${resolve(__dirname, './src')}`
     },
     {
-        find: /^wei_design(\/(es|lib))?$/,
+        find: /^wei-design(\/(es|lib))?$/,
         replacement: `${resolve(__dirname, './packages/index.ts')}/`
     }
 ]
