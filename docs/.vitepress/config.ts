@@ -48,14 +48,14 @@ export const config: UserConfig = {
             },
         },
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/wforguo/' }
+            { icon: 'github', link: 'https://github.com/wei-zone/' }
         ],
         search: {
             provider: 'local',
         },
         footer: {
             message: 'Released under the MIT License.',
-            copyright: `<a target="_blank" href="https://github.com/wforguo" style="color: #047857">Copyright &copy; 2016 - ${new Date().getFullYear()} &nbsp;forguo</a>`
+            copyright: `<a target="_blank" href="https://github.com/wei-zone" style="color: #047857">Copyright &copy; 2016 - ${new Date().getFullYear()} &nbsp;forguo</a>`
 
         }
     },
