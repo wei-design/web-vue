@@ -47,7 +47,7 @@
     "files": [
         "lib/*",
         "packages/*",
-        "Readme.md",
+        "readme.md",
         "package.json"
     ],
     "main": "./lib/web-vue.umd.js",

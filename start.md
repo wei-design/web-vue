@@ -401,7 +401,7 @@ build: {
     "files": [
         "lib/*",
         "packages/*",
-        "Readme.md",
+        "readme.md",
         "package.json"
     ],
     // 入口文件【注意文件后缀】
