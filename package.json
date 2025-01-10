@@ -29,6 +29,7 @@
         "lib:clean": "rimraf lib",
         "clean:modules": "rimraf node_modules",
         "prepare": "husky install",
+        "preinstall": "npx -y only-allow pnpm",
         "lint": "eslint --ext .vue,.js,.jsx,.ts,.tsx  --ignore-path .gitignore --fix packages",
         "format": "prettier .  --write",
         "release": "standard-version",
@@ -50,15 +51,18 @@
         "readme.md",
         "package.json"
     ],
-    "main": "./lib/web-vue.umd.js",
-    "module": "./lib/web-vue.mjs",
+    "main": "./lib/index.js",
+    "module": "./lib/index.mjs",
     "exports": {
         ".": {
-            "import": "./lib/web-vue.mjs",
-            "require": "./lib/web-vue.umd.js"
+            "types": "./lib/index.d.ts",
+            "import": "./lib/index.mjs",
+            "require": "./lib/index.js"
         },
         "./lib/style.css": "./lib/style.css"
     },
+    "unpkg": "./lib/index.iife.js",
+    "jsdelivr": "./lib/index.iife.js",
     "peerDependencies": {
         "vue": "^3.2.33"
     },
@@ -89,12 +93,11 @@
         "sass": "^1.49.7",
         "standard-version": "^9.5.0",
         "typescript": "^4.7.2",
-        "vite": "^3.0.9",
         "vite-plugin-dts": "^1.2.0",
-        "vite-plugin-md": "^0.15.0",
         "vite-plugin-meta-env": "^1.0.0",
-        "vue": "^3.2.33",
-        "vue-tsc": "^0.40.1"
+        "vue": "^3.4.8",
+        "vite": "^5.2.10",
+        "vue-tsc": "^1.6.5"
     },
     "config": {
         "commitizen": {
@@ -108,5 +111,10 @@
     },
     "engines": {
         "node": ">=16.0.0"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
     }
 }

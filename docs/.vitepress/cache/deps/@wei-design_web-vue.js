@@ -5,9 +5,9 @@ import {
   normalizeClass,
   openBlock,
   renderSlot
-} from "./chunk-US5US4YU.js";
+} from "./chunk-CQOUZRMK.js";
 
-// node_modules/.pnpm/registry.npmjs.org+@wei-design+web-vue@1.0.0_vue@3.5.1/node_modules/@wei-design/web-vue/lib/web-vue.mjs
+// node_modules/.pnpm/@wei-design+web-vue@1.0.0_vue@3.5.13/node_modules/@wei-design/web-vue/lib/web-vue.mjs
 var m = Array.isArray;
 var b = (t) => typeof t == "string";
 var y = (t) => t !== null && typeof t == "object";

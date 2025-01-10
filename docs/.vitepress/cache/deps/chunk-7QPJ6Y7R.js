@@ -1,4 +1,4 @@
-// node_modules/.pnpm/vitepress@1.3.4_ojl6su5qca4xzmj7mc55knue4a/node_modules/vitepress/lib/vue-demi.mjs
+// node_modules/.pnpm/vitepress@1.5.0_@algolia+client-search@5.19.0_@types+node@22.10.5_axios@0.27.2_nprogress@0.2._mcovpvxauntti5xjf6ixfxjafm/node_modules/vitepress/lib/vue-demi.mjs
 var isVue2 = false;
 var isVue3 = true;
 function set(target, key, val) {
@@ -33,4 +33,4 @@ vitepress/lib/vue-demi.mjs:
    * @license MIT
    *)
 */
-//# sourceMappingURL=chunk-LV7FH3VA.js.map
+//# sourceMappingURL=chunk-7QPJ6Y7R.js.map

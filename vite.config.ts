@@ -7,7 +7,6 @@ import { resolve } from 'path'
 import { Alias, defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import Markdown from 'vite-plugin-md' // vue中使用md
 // 提取ts文件
 import dts from 'vite-plugin-dts'
 import dayjs from 'dayjs'
@@ -22,7 +21,7 @@ const alias: Alias[] = [
     },
     {
         find: /^wei-design(\/(es|lib))?$/,
-        replacement: `${resolve(__dirname, './packages/index.ts')}/`
+        replacement: `${resolve(__dirname, './packages/index.ts')}`
     }
 ]
 
@@ -34,7 +33,6 @@ export default () => {
         APP_NAME: title,
         APP_BUILD_TIME: dayjs().format('YYYY-MM-DD HH:mm:ss')
     }
-
     return defineConfig({
         server: {
             open: true,
@@ -50,12 +48,15 @@ export default () => {
             lib: {
                 entry: resolve(__dirname, './packages/index.ts'),
                 name: 'WebVue',
-                fileName: 'web-vue'
+                fileName: 'index',
+                formats: ['es', 'cjs', 'iife']
             },
+            minify: false,
             rollupOptions: {
                 // 确保外部化处理那些你不想打包进库的依赖
                 external: ['vue'],
                 output: {
+                    exports: 'named',
                     // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
                     globals: {
                         vue: 'Vue'
@@ -66,8 +67,10 @@ export default () => {
         plugins: [
             vue({ include: [/\.vue$/, /\.md$/] }),
             vueJsx(),
-            Markdown(),
-            dts(),
+            dts({
+                // merge all declarations into one file
+                rollupTypes: true
+            }),
             // 环境变量
             VitePluginMetaEnv(metaEnv, 'import.meta.env'),
             VitePluginMetaEnv(metaEnv, 'process.env')
