@@ -21,6 +21,7 @@
         }
     },
     "include": [
+        "packages/**/*.ts",
         "src/**/*.ts",
         "src/**/*.d.ts",
         "src/**/*.tsx",
