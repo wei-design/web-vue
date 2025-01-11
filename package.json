@@ -2,7 +2,7 @@
     "name": "@wei-design/web-vue",
     "private": false,
     "packageManager": "pnpm@7.6.0",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "wforguo@qq.com",
     "description": "Wei Design - A Vue.js 3 UI library, @wei-design/web-vue",
     "license": "ISC",

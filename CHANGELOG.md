@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/wei-design/web-vue/compare/v1.0.1...v1.0.2) (2025-01-11)
+
+
+### Features
+
+* remove release-it ([25ce0eb](https://github.com/wei-design/web-vue/commit/25ce0ebb279a0c6360bd2fbb8932042c2bf2769f))
+* update docs ([77351e4](https://github.com/wei-design/web-vue/commit/77351e4bb7440b66225936d8d00869846d90ee55))
+* update docs ([ce50b29](https://github.com/wei-design/web-vue/commit/ce50b29c84871dec15f073911963ea7cca3c7d8d))
+* update dts ([153abee](https://github.com/wei-design/web-vue/commit/153abeeb0ee8f62533dd5ed2af6019badbf0dbb8))
+
 ### 1.0.1 (2025-01-11)
 
 
