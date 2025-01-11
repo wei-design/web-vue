@@ -11,7 +11,7 @@ lang: zh-CN
 
 环境要求：
 
-node：>=16.0.0
+node：>=18.0.0
 
 ## npm
 

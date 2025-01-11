@@ -17,7 +17,7 @@ A Vue.js 3 UI library
 
 ## 安装
 
-node：>=16.0.0
+node：>=18.0.0
 
 ### npm
 
