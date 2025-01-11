@@ -3,7 +3,9 @@
 A Vue.js 3 UI library
 
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli)
-[![Wei Design](https://img.shields.io/npm/v/@wei-design/web-vue.svg?style=flat-square)](https://www.npmjs.org/package/@wei-design/web-vue)
+[![web-vue](https://img.shields.io/npm/v/@wei-design/web-vue.svg?style=flat-square)](https://www.npmjs.org/package/@wei-design/web-vue)
+[![web-vue](https://img.shields.io/npm/dt/@wei-design/web-vue)](https://www.npmjs.org/package/@wei-design/web-vue)
+![](https://img.shields.io/github/stars/wei-design/web-vue#crop=0&crop=0&crop=1&crop=1&id=o8sRG&originHeight=20&originWidth=54&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
 ---
 

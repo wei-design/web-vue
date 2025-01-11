@@ -1,0 +1,27 @@
+{
+    "plugins": {
+        "@release-it/conventional-changelog": {
+            "preset": "angular",
+            "infile": "CHANGELOG.md"
+        }
+    },
+    "git": {
+        "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+        "release": true,
+        "draft": false
+    },
+    "npm": {
+        "publish": true
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "hooks": {
+        "before:init": ["npm version"],
+        "after:bump": ["npm run build"],
+        "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    }
+}

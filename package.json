@@ -38,7 +38,7 @@
         "release:major": "npm run release -- --release-as major",
         "release:minor": "npm run release -- --release-as minor",
         "release:patch": "npm run release -- --release-as patch",
-        "prepublishOnly": "npm run lib:clean && yarn run lib:build"
+        "prepublishOnly": "npm run lib:clean && npm run lib:build"
     },
     "homepage": "https://wei-design.github.io/web-vue/",
     "repository": {
@@ -110,7 +110,7 @@
         }
     },
     "engines": {
-        "node": ">=16.0.0"
+        "node": ">=18.0.0"
     },
     "commitlint": {
         "extends": [
