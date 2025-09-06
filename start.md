@@ -104,7 +104,7 @@ Vue.js - The Progressive JavaScript Framework
 ✔ Add ESLint for code quality? … No / Yes
 ✔ Add Prettier for code formatting? … No / Yes
 
-Scaffolding project in /Users/forguo/work/wei-design/web-vue...
+Scaffolding project in /Users/wei/work/wei-design/web-vue...
 
 Done. Now run:
 
@@ -433,7 +433,7 @@ build: {
     "name": "@wei-design/web-vue", // 包名，可以直接是包名，也可以@wei-design[组织]/web-vue[包名]
     "private": false, // 是否私有包，发布公共的需要设置false
     "version": "1.0.0", // 版本，每次发布都需要修改
-    "author": "wforguo@qq.com",
+    "author": "wei@qq.com",
     "description": "Wei Design - A Vue.js 3 UI library, @wei-design/web-vue", // 包的简述
     "keywords": [
         "@wei-design/web-vue" // 关键词

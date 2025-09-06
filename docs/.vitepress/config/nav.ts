@@ -1,5 +1,5 @@
 /**
- * @Author: forguo
+ * @Author: wei
  * @Date: 2022/7/8 23:17
  * @Description: nav配置
  */
@@ -19,7 +19,7 @@ const dropDown = [{
     text: '更多',
     items: [
         { text: 'GitHub', link: `https://github.com/${REPO_PATH}`, icon: 'github'},
-        { text: 'Blog', link: 'https://forguo.cn' },
+        // { text: 'Blog', link: 'https://wei.cn' },
     ]
 }];
 
